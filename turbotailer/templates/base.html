@@ -32,10 +32,10 @@
     {% endblock javascript %}
   </head>
   <body>
-    <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container-fluid">
-          <button class="navbar-toggler navbar-toggler-right"
+    <div class="mb-4">
+      <nav class="flex items-center justify-between flex-wrap bg-gray-100 p-6">
+        <div class="container mx-auto">
+          <button class="block lg:hidden px-3 py-2 border rounded text-black border-black"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent"
@@ -44,36 +44,32 @@
                   aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'home' %}">Turbotailer</a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
+          <a class="text-black font-semibold text-xl tracking-tight"
+             href="{% url 'home' %}">Turbotailer</a>
+          <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto"
+               id="navbarSupportedContent">
+            <div class="text-sm lg:flex-grow">
+              <a href="{% url 'home' %}"
+                 class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">Home</a>
+              <a href="{% url 'about' %}"
+                 class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">About</a>
+              <!-- Additional links and conditional content -->
               {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'users:detail' request.user.pk %}">{% translate "My Profile" %}</a>
-                </li>
-                <li class="nav-item">
-                  {# URL provided by django-allauth/account/urls.py #}
-                  <a class="nav-link" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a>
-                </li>
+                <a href="{% url 'users:detail' request.user.pk %}"
+                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "My Profile" %}</a>
+                <a href="{% url 'account_logout' %}"
+                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign Out" %}</a>
               {% else %}
                 {% if ACCOUNT_ALLOW_REGISTRATION %}
-                  <li class="nav-item">
-                    {# URL provided by django-allauth/account/urls.py #}
-                    <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
-                  </li>
+                  <a id="sign-up-link"
+                     href="{% url 'account_signup' %}"
+                     class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign Up" %}</a>
                 {% endif %}
-                <li class="nav-item">
-                  {# URL provided by django-allauth/account/urls.py #}
-                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
-                </li>
+                <a id="log-in-link"
+                   href="{% url 'account_login' %}"
+                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign In" %}</a>
               {% endif %}
-            </ul>
+            </div>
           </div>
         </div>
       </nav>
