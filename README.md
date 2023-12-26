@@ -9,6 +9,14 @@ Turbotailer
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
 
+
+## Prepare docker
+
+- Make the script executable: Run chmod +x prepare_docker.sh
+
+- Run the script: Execute the script with ./prepare_docker.sh.
+
+
 ## Basic Commands
 
 ### Setting Up Your Users
