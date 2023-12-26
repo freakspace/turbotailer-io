@@ -5,6 +5,8 @@
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
+    {% load django_browser_reload %}
+    {% load livereload_tags %}
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
@@ -30,6 +32,7 @@
       <!-- place project specific Javascript in this file -->
       {% render_bundle 'project' 'js' attrs='defer' %}
     {% endblock javascript %}
+    {% livereload_script %}
   </head>
   <body>
     <div class="mb-4">
@@ -87,7 +90,7 @@
         {% endfor %}
       {% endif %}
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+          <p>Use this document as a way to quick start any new project.</p>            
       {% endblock content %}
     </div>
     <!-- /container -->
@@ -104,5 +107,6 @@
     </script>
       {% endcomment %}
     {% endblock inline_javascript %}
+    {% django_browser_reload_script %}
   </body>
 </html>

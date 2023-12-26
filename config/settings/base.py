@@ -65,8 +65,10 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.messages",
+    "livereload",
     "django.contrib.staticfiles",
     # "django.contrib.humanize", # Handy template tags
+    "django_browser_reload",
     "django.contrib.admin",
     "django.forms",
 ]
@@ -138,6 +140,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "livereload.middleware.LiveReloadScript",
+    "django_browser_reload.middleware.BrowserReloadMiddleware"
 ]
 
 # STATIC
@@ -324,3 +328,6 @@ WEBPACK_LOADER = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+LIVERELOAD_HOST = "127.0.0.1"
+LIVERELOAD_PORT = "8001"
