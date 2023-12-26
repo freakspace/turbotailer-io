@@ -9,11 +9,19 @@ Turbotailer
 
 Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
 
+## Prepare git
+
+Setup the git user
+
+- Run chmod +x prepare_git.sh
+- Run the script: Execute the script with ./prepare_git.sh.
+
 
 ## Prepare docker
 
-- Make the script executable: Run chmod +x prepare_docker.sh
+Setup docker compose
 
+- Make the script executable: Run chmod +x prepare_docker.sh
 - Run the script: Execute the script with ./prepare_docker.sh.
 
 
