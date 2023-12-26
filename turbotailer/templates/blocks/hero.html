@@ -1,0 +1,24 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="hero bg-light text-center p-md-5 {% if self.full_width %}container-fluid{% else %}container px-5 {% endif %} d-flex align-items-center justify-content-center">
+  {% picture self.image fill-1920x800-c100 format-{avif,webp,jpeg} class="hero-image" %}
+  <div class="tint"></div>
+  <div class="content-overlay d-flex flex-column justify-content-between">
+    <div>
+      {% if self.sub_title %}<h2 class="fs-4 fst-italic text-white mb-0">{{ self.sub_title }}</h2>{% endif %}
+      <h1 class="mb-3 display-1 text-white fw-semibold">{{ self.title }}</h1>
+      <!-- Buttons -->
+      <div class="mt-5">
+        {% for button in self.buttons %}
+          {% include_block button %}
+        {% endfor %}
+      </div>
+    </div>
+    <!-- USPs -->
+    <div class="d-flex flex-column flex-md-row justify-content-center my-4">
+      {% for usp in self.usps %}
+        <div class="px-md-4 mt-md-4 text-white">{% include_block usp %}</div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if self.page_link %}<a href="{{ self.page_link.url }}">{% endif %}
+  <div class="card border-0 rounded-4 text-bg-dark">
+    {% picture self.image fill-300x300 format-{avif,webp,jpeg} class="card-img img-fluid rounded-4" loading="lazy" %}
+    <div class="tint rounded-4"></div>
+    <div class="card-img-overlay z-1 d-flex align-items-end justify-content-center">
+      <h3 class="card-title fs-5 fw-bolder">{{ self.title }}</h3>
+    </div>
+  </div>
+  {% if self.page_link %}</a>{% endif %}

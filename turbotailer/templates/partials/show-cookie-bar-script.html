@@ -1,0 +1,63 @@
+{% load static cookie_consent_tags %}
+
+{% static "js/cookiebar.module.js" as cookiebar_src %}
+<script type="module">
+  import {
+    showCookieBar
+  } from '{{ cookiebar_src }}';
+
+
+  const showAnalyticsInHead = () => {
+    const templateNode = document.getElementById('analytics-scripts-head');
+    const analyticsScripts = templateNode.content.cloneNode(true);
+    document.body.appendChild(analyticsScripts);
+  }
+  const showAnalyticsInBody = () => {
+    const template = document.getElementById('analytics-scripts-body')
+    const gtmScript = template.content.cloneNode(true);
+    document.body.appendChild(gtmScript);
+  };
+
+  // Function to handle analytics scripts on cookie acceptance
+  function onAcceptAnalytics(cookieGroups) {
+    console.log("Accepting")
+    const analyticsEnabled = cookieGroups.find(group => group.varname === 'analytics') !== undefined;
+    if (analyticsEnabled) {
+      showAnalyticsInHead()
+      showAnalyticsInBody()
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    let cookieModal;
+
+    showCookieBar({
+      statusUrl: '{{ status_url|escapejs }}',
+      templateSelector: '#cookie-consent__cookie-bar',
+      cookieGroupsSelector: '#cookie-consent__cookie-groups',
+      onShow: () => {
+        const cookieElement = document.getElementById('cookiePopup');
+        // Initialize the modal only if it hasn't been initialized yet
+        if (!cookieModal && cookieElement) {
+          cookieModal = new bootstrap.Modal(cookieElement);
+        }
+        if (cookieModal) {
+          cookieModal.show();
+        }
+
+      },
+      onAccept: (cookieGroups) => {
+        onAcceptAnalytics(cookieGroups);
+        if (cookieModal) {
+          cookieModal.hide();
+        }
+      },
+      onDecline: () => {
+        if (cookieModal) {
+          cookieModal.hide();
+        }
+      },
+    })
+  });
+</script>

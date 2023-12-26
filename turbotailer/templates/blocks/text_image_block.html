@@ -1,0 +1,32 @@
+{% load wagtailcore_tags wagtailimages_tags wagtailembeds_tags %}
+
+<div class="container py-4 py-md-5">
+  <div class="row row-cols-2 g-4{% if self.reverse %} flex-row-reverse{% endif %}">
+    <div class="col-12 col-md-6">
+      {% if self.image %}
+        {% if self.shadow %}
+          {% picture self.image fill-650x750 format-{avif,webp,jpeg} loading="lazy" class="img-fluid rounded-4 shadow" %}
+        {% else %}
+          {% picture self.image fill-650x750 format-{avif,webp,jpeg} loading="lazy" class="img-fluid rounded-4" %}
+        {% endif %}
+      {% endif %}
+      {% if self.embed %}
+        <div class="ratio ratio-16x9">{% embed self.embed.url %}</div>
+      {% endif %}
+    </div>
+    <div class="col-12 col-md-6 d-flex align-items-center {% if self.reverse %}justify-content-end pe-md-5 {% else %}ps-md-5{% endif %}">
+      <div>
+        {% if self.subtitle %}<h3 class="fs-6 text-secondary">{{ self.subtitle }}</h3>{% endif %}
+        <h2 class="fw-semibold display-4 mb-3">{{ self.title }}</h2>
+        <p>{{ self.text|richtext }}</p>
+        {% if self.buttons %}
+          <div class="row row-cols-1 g-3 mt-4">
+            {% for button in self.buttons %}
+              <div class="col">{% include_block button %}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{% extends "cookie_consent/base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+  <div class="container-fluid bg-secondary empty-space"></div>
+  <div class="container mb-3">
+    <h1 class="mt-4">{% translate 'Cookieindstillinger' %}</h1>
+    <p>{% translate 'Dette er en liste af alle cookies og tilhørende kategorier som anvendes på hjemmeside' %}</p>
+    {% for cookie_group in object_list %}
+      {% include "cookie_consent/_cookie_group.html" %}
+    {% endfor %}
+  </div>
+{% endblock content %}

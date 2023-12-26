@@ -1,0 +1,16 @@
+{% load wagtailcore_tags i18n %}
+
+<div class="container py-4 py-md-5">
+  <h2 class="fw-semibold text-center mb-5 display-4">
+    {% if self.title %}
+      {{ self.title }}
+    {% else %}
+      {% translate 'Vores services' %}
+    {% endif %}
+  </h2>
+  <div class="row row-cols-1 row-cols-md-{{ self.services|length }} g-4">
+    {% for service in self.services %}
+      <div class="col">{% include_block service %}</div>
+    {% endfor %}
+  </div>
+</div>

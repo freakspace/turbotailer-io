@@ -1,0 +1,10 @@
+<div class="col-12 col-md">
+  <h3 class="text-white">{{ self.heading }}</h3>
+  <ul class="list-unstyled">
+    {% for link in self.links %}
+      <li>
+        <a href="{{ link.page.url }}" class="text-white text-decoration-none">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

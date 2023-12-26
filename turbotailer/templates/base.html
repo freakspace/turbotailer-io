@@ -1,21 +1,29 @@
-{% load static i18n %}
+{% load static i18n cookie_consent_tags navigation_tags wagtailimages_tags wagtailuserbar %}
 {% load render_bundle from webpack_loader %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
+{% site_info as site_info %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
       {% block title %}
-        Turbotailer
+        {% if page.seo_title %}
+          {{ page.seo_title }}
+        {% else %}
+          {{ page.title }}
+        {% endif %}
       {% endblock title %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {# Force all links in the live preview panel to be opened in a new tab #}
+    {% if request.in_preview_panel %}<base target="_blank" />{% endif %}
     <meta name="description" content="Turbotailer" />
     <meta name="author" content="Emil Nielsen" />
-    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
+    {% image site_info.company_favicon fill-32x32 as favicon %}
+    <link rel="icon" href="{{ favicon.url }}" />
     {% block css %}
       <!-- Your stuff: Third-party CSS libraries go here -->
       <!-- This file stores project-specific CSS -->
@@ -29,80 +37,67 @@
       {% render_bundle 'vendors' 'js' attrs='defer' %}
       <!-- place project specific Javascript in this file -->
       {% render_bundle 'project' 'js' attrs='defer' %}
+      <template id="analytics-scripts-head">
+        {% if site_info.google_analytics %}
+          <script async
+                  src="https://www.googletagmanager.com/gtag/js?id={{ site_info.google_analytics }}"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', '{{ site_info.google_analytics }}');
+          </script>
+        {% endif %}
+        {% if site_info.tag_manager %}
+          <!-- Google Tag Manager -->
+          <script>
+            (function(w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+              });
+              var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '{{ site_info.tag_manager }}');
+          </script>
+          <!-- End Google Tag Manager -->
+        {% endif %}
+      </template>
     {% endblock javascript %}
   </head>
   <body>
-    <div class="mb-4">
-      <nav class="flex items-center justify-between flex-wrap bg-gray-100 p-6">
-        <div class="container mx-auto">
-          <button class="block lg:hidden px-3 py-2 border rounded text-black border-black"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="text-black font-semibold text-xl tracking-tight"
-             href="{% url 'home' %}">Turbotailer</a>
-          <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto"
-               id="navbarSupportedContent">
-            <div class="text-sm lg:flex-grow">
-              <a href="{% url 'home' %}"
-                 class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">Home</a>
-              <a href="{% url 'about' %}"
-                 class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">About</a>
-              <!-- Additional links and conditional content -->
-              {% if request.user.is_authenticated %}
-                <a href="{% url 'users:detail' request.user.pk %}"
-                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "My Profile" %}</a>
-                <a href="{% url 'account_logout' %}"
-                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign Out" %}</a>
-              {% else %}
-                {% if ACCOUNT_ALLOW_REGISTRATION %}
-                  <a id="sign-up-link"
-                     href="{% url 'account_signup' %}"
-                     class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign Up" %}</a>
-                {% endif %}
-                <a id="log-in-link"
-                   href="{% url 'account_login' %}"
-                   class="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-black mr-4">{% translate "Sign In" %}</a>
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      </nav>
+    <template id="analytics-scripts-body">
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe class="gtm"
+        src="https://www.googletagmanager.com/ns.html?id={{ site_info.tag_manager }}"
+        height="0"
+        width="0"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    </template>
+    <div class="position-relative">
+      {% wagtailuserbar %}
+      {% block header %}
+        {% include "includes/header.html" %}
+      {% endblock header %}
+      {% block messages %}
+        {% include "includes/messages.html" %}
+      {% endblock messages %}
+      <main>
+        {% block content %}
+        {% endblock content %}
+      </main>
     </div>
-    <div class="container">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-            {{ message }}
-            <button type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"></button>
-          </div>
-        {% endfor %}
-      {% endif %}
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-    </div>
-    <!-- /container -->
-    {% block modal %}
-    {% endblock modal %}
-    {% block inline_javascript %}
-      {% comment %}
-    Script tags with only code, no src (defer by default). To run
-    with a "defer" so that you run inline code:
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        /* Run whatever you want */
-      });
-    </script>
-      {% endcomment %}
-    {% endblock inline_javascript %}
+    {% include "includes/footer.html" %}
+    {% include 'partials/cookies.html' %}
   </body>
 </html>

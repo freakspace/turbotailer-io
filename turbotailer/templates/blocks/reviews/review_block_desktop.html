@@ -1,0 +1,68 @@
+{% load utils i18n %}
+
+{% if reviews %}
+  <div class="container-fluid bg-light border-top border-bottom pt-4 pb-3">
+    <div class="container">
+      <div class="row pt-3 px-5">
+        <div class="col-3">
+          <div class="mb-3">
+            <h2 class="mb-0 fs-2 text-success fw-bolder">
+              {% if average_rating > 3.7|to_float %}
+                {% translate 'Godt' %}
+              {% elif average_rating > 4|to_float %}
+                {% translate 'Fremragende' %}
+              {% elif average_rating > 4.5|to_float %}
+                {% translate 'Perfekt' %}
+              {% else %}
+                {% translate 'Fint' %}
+              {% endif %}
+            </h2>
+            <div class="d-flex">
+              {% for i in '12345'|make_list %}
+                {% if average_rating >= i|to_float %}
+                  <div class="pe-2 text-primary">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                {% else %}
+                  <div class="pe-2 text-body-tertiary">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <p class="text-muted mb-0 fst-italic mt-2">
+              {% blocktranslate with reviews_count=reviews_count %}Baseret på {{reviews_count}} anmeldelser{% endblocktranslate %}
+            </p>
+          </div>
+        </div>
+        <div class="col-9">
+          <div id="reviewCarouselDesktop"
+               class="carousel slide"
+               data-bs-ride="carousel">
+            <div class="carousel-inner">
+              {% for chunk in reviews|chunks:3 %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                  <div class="row row-cols-3 g-4">
+                    {% for review in chunk %}
+                      {% include 'blocks/reviews/review_item.html' %}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="p-2 carousel-indicators position-relative mb-0">
+              {% for chunk in reviews|chunks:3 %}
+                <button type="button"
+                        data-bs-target="#reviewCarouselDesktop"
+                        data-bs-slide-to="{{ forloop.counter0 }}"
+                        class="{% if forloop.first %}active{% endif %}"
+                        aria-current="true"
+                        aria-label="Slide {{ forloop.counter }}"></button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

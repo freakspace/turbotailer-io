@@ -1,0 +1,83 @@
+{% load static i18n cookie_consent_tags %}
+{% load custom_cookie_tags %}
+
+{% get_all_cookies as all_cookies %}
+{% url "cookie_consent_cookie_group_list" as url_cookies %}
+{% if request|cookie_consent_enabled %}
+  {% not_accepted_or_declined_cookie_groups request as cookie_groups %}
+  {% cookie_consent_accept_url cookie_groups as url_accept %}
+  {% cookie_consent_decline_url cookie_groups as url_decline %}
+  {% all_cookie_groups 'cookie-consent__cookie-groups' %}
+  <template id="cookie-consent__cookie-bar">
+    {% with cookie_groups=cookie_groups|join:", " %}
+      <div class="modal fade"
+           id="cookiePopup"
+           tabindex="-1"
+           aria-labelledby="cookiePopupLabel"
+           aria-hidden="true"
+           data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="cookiePopupLabel">Vi anvender cookies</h1>
+            </div>
+            <div class="modal-body">
+              <div class="cookie-bar">
+                <p>
+                  Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring.
+                  Venligst tilkendegiv hvilke cookies du accepterer
+                </p>
+                <div class="accordion mb-3" id="cookieAccordion">
+                  {% for group in all_cookies %}
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-{{ forloop.counter }}">
+                        <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse-{{ forloop.counter }}"
+                                aria-expanded="false"
+                                aria-controls="collapse-{{ forloop.counter }}">{{ group }}</button>
+                      </h2>
+                      <div id="collapse-{{ forloop.counter }}"
+                           class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                           aria-labelledby="heading-{{ forloop.counter }}"
+                           data-bs-parent="#cookieAccordion">
+                        <div class="accordion-body">
+                          <table class="table table-sm table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Navn</th>
+                                <th>Beskrivelse</th>
+                                <th>Sti</th>
+                                <th>Domæne</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for cookie in group.cookie_set.all %}
+                                <tr>
+                                  <td>{{ cookie.name }}</td>
+                                  <td>{{ cookie.description }}</td>
+                                  <td>{{ cookie.path }}</td>
+                                  <td>{{ cookie.domain }}</td>
+                                </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+                <button type="button" class="cookie-consent__accept btn btn-primary">{% translate 'Accepter alle' %}</button>
+                <button type="button" class="cookie-consent__decline btn btn-primary">{% translate 'Kun nødvendige' %}</button>
+                <a href="{{ url_cookies }}">{% translate 'Indstillinger' %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endwith %}
+  </template>
+{% endif %}
+{% url 'cookie_consent_status' as status_url %}
+{% include "./show-cookie-bar-script.html" with status_url=status_url %}

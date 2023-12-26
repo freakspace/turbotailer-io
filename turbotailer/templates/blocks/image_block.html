@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+<figure>
+  {% picture self.image width-1000 format-{avif,webp,jpeg} loading="lazy" class="img-fluid" %}
+  {% if self.caption %}<figcaption>{{ self.caption }}</figcaption>{% endif %}
+</figure>

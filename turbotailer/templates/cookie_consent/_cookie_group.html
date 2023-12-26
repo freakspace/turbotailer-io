@@ -1,0 +1,55 @@
+{% load i18n %}
+{% load cookie_consent_tags %}
+
+<div class="cookie-group">
+  <div class="cookie-group-title">
+    <h3>{{ cookie_group.name }}</h3>
+    {% if not cookie_group.is_required %}
+      <div class="cookie-group-form">
+        {% if request|cookie_group_accepted:cookie_group.varname %}
+          <span class="cookie-consent-accepted badge rounded-pill text-bg-success py-1 px-2 d-inline-block mb-3">{% trans "Godkendt" %}</span>
+        {% else %}
+          <form class="cookie-consent-accept"
+                action="{% url "cookie_consent_accept" cookie_group.varname %}"
+                method="post">
+            {% csrf_token %}
+            <input type="submit"
+                   class="btn btn-primary"
+                   value="{% translate "Accepter" %}" />
+          </form>
+        {% endif %}
+        {% if request|cookie_group_declined:cookie_group.varname %}
+          <span class="cookie-consent-declined badge rounded-pill text-bg-danger py-1 px-2 d-inline-block mb-3">{% trans "Afvist" %}</span>
+        {% else %}
+          <form class="cookie-consent-decline"
+                action="{% url "cookie_consent_decline" cookie_group.varname %}"
+                method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="{% translate "Afvis" %}" />
+          </form>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  <p>{{ cookie_group.description }}</p>
+  <table class="table table-sm table-bordered">
+    <thead>
+      <tr>
+        <th>Navn</th>
+        <th>Beskrivelse</th>
+        <th>Sti</th>
+        <th>Domæne</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cookie in cookie_group.cookie_set.all %}
+        <tr>
+          <td>{{ cookie.name }}</td>
+          <td>{{ cookie.description }}</td>
+          <td>{{ cookie.path }}</td>
+          <td>{{ cookie.domain }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

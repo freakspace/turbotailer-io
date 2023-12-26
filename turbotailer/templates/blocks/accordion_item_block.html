@@ -1,0 +1,18 @@
+{% load wagtailcore_tags %}
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="heading{{ id }}">
+    <button class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#accordion-{{ id }}"
+            aria-expanded="true"
+            aria-controls="accordion-{{ id }}">{{ self.title }}</button>
+  </h2>
+  <div id="accordion-{{ id }}"
+       class="accordion-collapse collapse"
+       aria-labelledby="heading{{ id }}"
+       data-bs-parent="#accordion">
+    <div class="accordion-body">{{ self.content|richtext }}</div>
+  </div>
+</div>

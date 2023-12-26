@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+
+<div class="accordion" id="accordion">
+  {% for block in self %}
+    {% with accordion_id=forloop.counter %}
+      {% include_block block with id=accordion_id %}
+    {% endwith %}
+  {% endfor %}
+</div>

@@ -1,0 +1,21 @@
+{% load wagtailcore_tags %}
+
+{% if self.title %}
+  {% if self.page_link %}
+    <a type="button"
+       href="{{ self.page_link.url }}"
+       class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %}">{{ self.title }}</a>
+  {% elif self.anchor %}
+    <a type="button"
+       href="#{{ self.anchor }}"
+       class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %}">{{ self.title }}</a>
+  {% elif self.open_modal %}
+    <button type="button"
+            class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }} border-2{% else %}btn-{{ self.style }}{% endif %}"
+            data-bs-toggle="modal"
+            data-bs-target="#formModal">{{ self.title }}</button>
+  {% else %}
+    <!-- Handle the case where there's no link -->
+    <span class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %} disabled">{{ self.title }}</span>
+  {% endif %}
+{% endif %}

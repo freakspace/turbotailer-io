@@ -1,0 +1,4 @@
+{% if reviews %}
+  <div class="d-none d-lg-block mb-5">{% include 'blocks/reviews/review_block_desktop.html' %}</div>
+  <div class="d-lg-none mb-5">{% include 'blocks/reviews/review_block_mobile.html' %}</div>
+{% endif %}

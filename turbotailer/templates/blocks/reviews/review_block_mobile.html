@@ -1,0 +1,56 @@
+{% load utils i18n %}
+
+<div class="container-fluid bg-light border-top border-bottom p-3">
+  <div class="container">
+    <div class="text-center mb-3">
+      <h2 class="text-success mb-0 fst-italic mt-2">
+        {% if average_rating > 3.7|to_float %}
+          {% translate 'Godt' %}
+        {% elif average_rating > 4|to_float %}
+          {% translate 'Fremragende' %}
+        {% elif average_rating > 4.5|to_float %}
+          {% translate 'Perfekt' %}
+        {% else %}
+          {% translate 'Fint' %}
+        {% endif %}
+      </h2>
+      <div class="d-flex justify-content-center">
+        {% for i in '12345'|make_list %}
+          {% if average_rating >= i|to_float %}
+            <div class="pe-2 text-primary">
+              <i class="bi bi-star-fill"></i>
+            </div>
+          {% else %}
+            <div class="pe-2 text-body-tertiary">
+              <i class="bi bi-star-fill"></i>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <p class="text-muted mb-0 fst-italic mt-2">
+        {% blocktranslate with reviews_count=reviews_count %}Baseret på {{reviews_count}} anmeldelser{% endblocktranslate %}
+      </p>
+    </div>
+    <div id="reviewCarouselMobile"
+         class="carousel slide"
+         data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for review in reviews %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            {% include 'blocks/reviews/review_item.html' %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="p-2 carousel-indicators position-relative mb-0">
+        {% for review in reviews %}
+          <button type="button"
+                  data-bs-target="#reviewCarouselMobile"
+                  data-bs-slide-to="{{ forloop.counter0 }}"
+                  class="{% if forloop.first %}active{% endif %}"
+                  aria-current="true"
+                  aria-label="Slide {{ forloop.counter }}"></button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

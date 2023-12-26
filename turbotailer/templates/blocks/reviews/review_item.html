@@ -1,0 +1,26 @@
+{% load utils %}
+
+<div class="col">
+  <div class="border review card p-3 h-100 rounded-4">
+    <div class="review-content">
+      {% if review.title %}<p class="mb-1 fw-bold text-truncate fs-6">{{ review.title }}</p>{% endif %}
+      <p class="mb-2 fs-7">{{ review.content }}</p>
+    </div>
+    <div class="col">
+      <div class="d-flex flex-row align-items-end h-100">
+        {% for i in '12345'|make_list %}
+          {% if review.rating >= i|to_float %}
+            <div class="pe-2 text-primary">
+              <i class="bi bi-star-fill"></i>
+            </div>
+          {% else %}
+            <div class="pe-2 text-body-tertiary">
+              <i class="bi bi-star-fill"></i>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <small class="d-inline-block text-muted mt-1">{{ review.name }} {{ review.created_at|date:"SHORT_DATE_FORMAT" }}</small>
+  </div>
+</div>

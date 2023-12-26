@@ -1,0 +1,43 @@
+{% load wagtailcore_tags wagtailimages_tags i18n %}
+
+{% url "cookie_consent_cookie_group_list" as url_cookies %}
+<!-- Top section with 4 columns -->
+<div class="row mb-5">
+  <!-- Contact Us Column -->
+  <div class="col-12 col-md">
+    <h3 class="text-white">{% translate 'Kontakt os' %}</h3>
+    <ul class="list-unstyled text-white">
+      <li>
+        <i class="bi bi-envelope-at me-2"></i>
+        {{ site_info.email }}
+      </li>
+      <li>
+        <i class="bi bi-telephone me-2"></i>
+        {{ site_info.phone }}
+      </li>
+    </ul>
+  </div>
+  <!-- Columns -->
+  {% for block in footer_columns %}
+    {% include_block block %}
+  {% endfor %}
+  <!-- Logo and Address Column -->
+  <div class="col-12 col-md">
+    {% picture site_info.company_logo width-200 format-{avif,webp,jpeg} loading="lazy" class="img-fluid mb-3" %}
+    <address class="text-white">
+      {{ site_info.address }}
+    </address>
+  </div>
+</div>
+<hr class="border-white mb-3" />
+<!-- Bottom section for trademark and cookies link -->
+<div class="row">
+  <div class="col-md-6 text-white">
+    <p>© {% now "Y" %} {{ site_info.company_name }}</p>
+  </div>
+  <div class="col-md-3 text-md-start">
+    <a href="{{ url_cookies }}" class="text-white text-decoration-none me-2">
+      <i class="bi bi-cookie me-2"></i> {% translate 'Cookieindstillinger' %}
+    </a>
+  </div>
+</div>

@@ -73,3 +73,8 @@ CELERY_TASK_EAGER_PROPAGATES = True
 WEBPACK_LOADER["DEFAULT"]["CACHE"] = not DEBUG  # noqa: F405
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+ROBOTS = [
+    "User-Agent: *",
+    "Disallow: /",
+]

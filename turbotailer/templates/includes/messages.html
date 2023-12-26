@@ -1,0 +1,22 @@
+{% load i18n %}
+
+<div aria-live="polite" aria-atomic="true" class="position-relative">
+  <div class="toast-container position-absolute top-0 start-50 translate-middle-x p-3">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="toast align-items-center show {% if message.level_tag == 'success' %}text-bg-success{% elif message.level_tag == 'error' %}text-bg-danger{% elif message.level_tag == 'info' %}text-bg-secondary{% elif message.level_tag == 'warning' %}text-bg-warning{% else %}text-bg-secondary{% endif %}"
+             role="alert"
+             aria-live="assertive"
+             aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body fw-bolder fs-5">{{ message|safe }}</div>
+            <button type="button"
+                    class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

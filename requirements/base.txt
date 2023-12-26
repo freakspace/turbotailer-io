@@ -18,3 +18,5 @@ django-crispy-forms==2.1  # https://github.com/django-crispy-forms/django-crispy
 crispy-bootstrap5==2023.10  # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis==5.4.0  # https://github.com/jazzband/django-redis
 django-webpack-loader==2.0.1  # https://github.com/django-webpack/django-webpack-loader
+django-cookie-consent==0.5.0b0 # https://pypi.org/project/django-cookie-consent/
+wagtail==5.2.1 # https://pypi.org/project/wagtail/
