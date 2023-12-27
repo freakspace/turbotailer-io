@@ -29,6 +29,8 @@
       <!-- This file stores project-specific CSS -->
       {% render_bundle 'project' 'css' %}
     {% endblock css %}
+    <!-- Remove in production-->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Le javascript
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
@@ -75,7 +77,7 @@
       </template>
     {% endblock javascript %}
   </head>
-  <body>
+  <body class="bg-customBeige">
     <template id="analytics-scripts-body">
       <!-- Google Tag Manager (noscript) -->
       <noscript><iframe class="gtm"

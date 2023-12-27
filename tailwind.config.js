@@ -2,10 +2,14 @@
 module.exports = {
     mode: 'jit',
     content: [
-      './turbotailer/templates/*.html', './turbotailer/templates/**/*.html'
+      './turbotailer/templates/**/*.{html,css,js}'
     ],
     theme: {
-      extend: {},
+      extend: {
+        colors: {
+          'customBeige': '#F2F0EB',
+        },
+      },
     },
     plugins: [
       require("@tailwindcss/forms"),
