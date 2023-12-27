@@ -67,6 +67,14 @@ services:
       - '5555:5555'
     command: /start-flower
 
+  livereload:
+    <<: *django
+    image: turbotailerio_local_livereload
+    container_name: turbotailerio_local_livereload
+    ports:
+      - '8001:8001'
+    command: /start-livereload
+
   node:
     build:
       context: .

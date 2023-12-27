@@ -84,6 +84,9 @@ COPY ./compose/local/django/celery/flower/start /start-flower
 RUN sed -i 's/\r$//g' /start-flower
 RUN chmod +x /start-flower
 
+COPY ./compose/local/django/livereload/start /start-livereload
+RUN sed -i 's/\r$//g' /start-livereload
+RUN chmod +x /start-livereload
 
 # copy application code to WORKDIR
 COPY . ${APP_HOME}
