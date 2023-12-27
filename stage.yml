@@ -9,7 +9,7 @@ services:
   django: &django
     build:
       context: .
-      dockerfile: ./compose/production/django/Dockerfile
+      dockerfile: ./compose/stage/django/Dockerfile
 
     image: turbotailerio_stage_django
     depends_on:
