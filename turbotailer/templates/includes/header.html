@@ -2,47 +2,52 @@
 
 {% wagtail_site as current_site %}
 <div class="container mx-auto">
-  <!--Main nav-->
-  <nav class="bg-customBeige rounded-3xl border-2 bordergray-300 mt-6 px-4 py-3 shadow-lg sticky top-0 z-50">
-    <div class="container flex justify-between">
-      <div class="flex">
-        <a href="{% pageurl current_site.root_page %}" class="">
-          <img src="{% static 'images/logo/turbotailer.svg' %}"
-               alt="Turbotailer Logo" />
-        </a>
-        <div class="h-100 bg-gray-300 mx-6 border-2 hidden lg:block"></div>
-        <ul class="flex hidden lg:block">
-          {% get_site_root as site_root %}
-          {% top_menu parent=site_root calling_page=self %}
-        </ul>
+  <div class="px-4">
+    <!--Main nav-->
+    <nav class="bg-customBeige rounded-3xl border-2 bordergray-300 mt-6 px-4 py-3 shadow-lg sticky top-0 z-50">
+      <div class="container flex justify-between">
+        <div class="flex">
+          <a href="{% pageurl current_site.root_page %}" class="">
+            <img src="{% static 'images/logo/turbotailer.svg' %}"
+                 alt="Turbotailer Logo" />
+          </a>
+          <div class="h-100 bg-gray-300 mx-6 border-2 hidden lg:block"></div>
+          <div class="hidden lg:flex lg:items-center lg:justify-center">
+            <ul class="flex items-center">
+              {% get_site_root as site_root %}
+              {% top_menu parent=site_root calling_page=self %}
+            </ul>
+          </div>
+        </div>
+        <!-- Toggle button for mobile view -->
+        <div>
+          <button id="dropdownButton"
+                  class="border-2 border-black shadow-lg rounded-full lg:hidden"
+                  type="button"
+                  aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 fill="none"
+                 viewBox="0 0 24 24"
+                 stroke-width="1.5"
+                 stroke="currentColor"
+                 class="w-20 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+          </button>
+        </div>
+        <button type="button"
+                class="font-semibold rounded-full border-2 border-black shadow-md px-4 py-2 hidden lg:block"
+                @click="openModal">
+          <!-- Custom JS for modal -->
+          {% translate 'Book et møde' %}
+        </button>
       </div>
-      <!-- Toggle button for mobile view -->
-      <button class="border-2 border-black shadow-lg rounded-full"
-              type="button"
-              @click="toggle"
-              aria-label="Toggle navigation">
-        <svg xmlns="http://www.w3.org/2000/svg"
-             fill="none"
-             viewBox="0 0 24 24"
-             stroke-width="1.5"
-             stroke="currentColor"
-             class="w-20 h-10">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
-        </svg>
-      </button>
-      <div x-show="isOpen" class="hidden" id="navbarNav">
-        <!-- Tailwind CSS + Alpine.js for toggling -->
+      <div id="dropdownMenu" hidden>
         <ul class="mr-auto">
           {% get_site_root as site_root %}
           {% top_menu parent=site_root calling_page=self %}
         </ul>
       </div>
-      <button type="button"
-              class="font-semibold rounded-full border-2 border-black shadow-md px-4 py-2 hidden lg:block"
-              @click="openModal">
-        <!-- Custom JS for modal -->
-        {% translate 'Book et møde' %}
-      </button>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </div>
