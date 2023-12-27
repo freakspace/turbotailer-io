@@ -1,0 +1,73 @@
+version: '3'
+
+volumes:
+  stage_postgres_data: {}
+  stage_postgres_data_backups: {}
+  stage_traefik: {}
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/production/django/Dockerfile
+
+    image: turbotailerio_stage_django
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - ./.envs/.stage/.django
+      - ./.envs/.stage/.postgres
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: turbotailerio_stage_postgres
+    volumes:
+      - stage_postgres_data:/var/lib/postgresql/data
+      - stage_postgres_data_backups:/backups
+    env_file:
+      - ./.envs/.stage/.postgres
+
+  traefik:
+    build:
+      context: .
+      dockerfile: ./compose/stage/traefik/Dockerfile
+    image: turbotailerio_stage_traefik
+    depends_on:
+      - django
+    volumes:
+      - stage_traefik:/etc/traefik/acme
+    ports:
+      - '0.0.0.0:80:80'
+      - '0.0.0.0:443:443'
+      - '0.0.0.0:5555:5555'
+
+  redis:
+    image: redis:6
+
+  celeryworker:
+    <<: *django
+    image: turbotailerio_stage_celeryworker
+    command: /start-celeryworker
+
+  celerybeat:
+    <<: *django
+    image: turbotailerio_stage_celerybeat
+    command: /start-celerybeat
+
+  flower:
+    <<: *django
+    image: turbotailerio_stage_flower
+    command: /start-flower
+
+  awscli:
+    build:
+      context: .
+      dockerfile: ./compose/production/aws/Dockerfile
+    env_file:
+      - ./.envs/.stage/.django
+    volumes:
+      - stage_postgres_data_backups:/backups:z
