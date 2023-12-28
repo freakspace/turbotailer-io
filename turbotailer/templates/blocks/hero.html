@@ -1,24 +1,29 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="hero bg-light text-center p-md-5 {% if self.full_width %}container-fluid{% else %}container px-5 {% endif %} d-flex align-items-center justify-content-center">
-  {% picture self.image fill-1920x800-c100 format-{avif,webp,jpeg} class="hero-image" %}
-  <div class="tint"></div>
-  <div class="content-overlay d-flex flex-column justify-content-between">
-    <div>
-      {% if self.sub_title %}<h2 class="fs-4 fst-italic text-white mb-0">{{ self.sub_title }}</h2>{% endif %}
-      <h1 class="mb-3 display-1 text-white fw-semibold">{{ self.title }}</h1>
-      <!-- Buttons -->
-      <div class="mt-5">
+<div class="container mx-auto">
+  <div class="px-4">
+    {% if self.title %}<h1 class="text-black text-2xl md:text-6xl font-bold mb-5 mt-10">{{ self.title }}</h1>{% endif %}
+    <div class="grid md:grid-cols-12 mb-10">
+      <div class="md:col-span-6 lg:col-span-8 mb-5 md:mb-0">
+        {% if self.sub_title %}<h2 class="text-black text-lg lg:w-1/2">{{ self.sub_title }}</h2>{% endif %}
+      </div>
+      <div class="md:col-span-6 lg:col-span-4 flex md:items-end md:justify-end gap-4">
         {% for button in self.buttons %}
           {% include_block button %}
         {% endfor %}
       </div>
     </div>
-    <!-- USPs -->
-    <div class="d-flex flex-column flex-md-row justify-content-center my-4">
-      {% for usp in self.usps %}
-        <div class="px-md-4 mt-md-4 text-white">{% include_block usp %}</div>
-      {% endfor %}
+    <!-- Image Container -->
+    <div class="relative">
+      <!-- Main Image with higher z-index -->
+      {% picture self.image width-800 format-{avif,webp,jpeg} class="z-10" %}
+      <!-- Static Image Positioned Under Main Image -->
+      <img src="{% static 'images/illustrations/line.png' %}"
+           class="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/2 z-[-1] hidden lg:block"
+           alt="line" />
+      <img src="{% static 'images/illustrations/line.png' %}"
+           class="absolute top-1/2 right-10 transform -translate-y-1/2 z-[-1] hidden lg:block"
+           alt="line" />
     </div>
   </div>
 </div>

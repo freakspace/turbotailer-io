@@ -2,20 +2,38 @@
 
 {% if self.title %}
   {% if self.page_link %}
-    <a type="button"
-       href="{{ self.page_link.url }}"
-       class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %}">{{ self.title }}</a>
+    <button href="{{ self.page_link.url }}"
+            type="button"
+            class="text-md font-semibold py-2 px-4 rounded-lg {{ self.style }}  {% if self.style == primary %}test{% endif %}">
+      {{ self.title }}
+    </button>
   {% elif self.anchor %}
-    <a type="button"
-       href="#{{ self.anchor }}"
-       class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %}">{{ self.title }}</a>
+    <button href="#{{ self.anchor }}"
+            type="button"
+            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}">
+      {{ self.title }}
+    </button>
   {% elif self.open_modal %}
     <button type="button"
-            class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }} border-2{% else %}btn-{{ self.style }}{% endif %}"
+            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}bg-black text-white pe-3 grow md:grow-0{% elif self.style == 'secondary' %}border-2{% endif %}"
             data-bs-toggle="modal"
-            data-bs-target="#formModal">{{ self.title }}</button>
+            data-bs-target="#formModal">
+      <div class="grow text-left">{{ self.title }}</div>
+      {% if self.style == 'primary' %}
+        <span class="bg-white text-black h-8 w-8 rounded-full ms-3 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="2"
+               stroke="currentColor"
+               class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+        </span>
+      {% endif %}
+    </button>
   {% else %}
     <!-- Handle the case where there's no link -->
-    <span class="btn btn-lg rounded-4 px-4 fw-bolder {% if self.outline %}btn-outline-{{ self.style }}{% else %}btn-{{ self.style }}{% endif %} disabled">{{ self.title }}</span>
+    <span class="text-md font-semibold py-2 px-4 rounded-lg disabled">{{ self.title }}</span>
   {% endif %}
 {% endif %}

@@ -84,3 +84,7 @@ INSTALLED_APPS += ["livereload", "django_browser_reload"]
 
 LIVERELOAD_HOST = "127.0.0.1"
 LIVERELOAD_PORT = "8001"
+
+# DATABASES
+# ------------------------------------------------------------------------------
+DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # noqa: F405
