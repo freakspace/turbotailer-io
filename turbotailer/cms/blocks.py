@@ -191,6 +191,30 @@ class ServicesBlock(StructBlock):
         collapsed = True
 
 
+class CasesItemBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    image = ImageChooserBlock(required=True)
+    page_link = PageChooserBlock(required=False, help_text="Select an internal page to link to")
+
+    class Meta:
+        template = "blocks/cases_item_block.html"
+        icon = "doc-empty-inverse"
+        label = "Cases item"
+
+
+class CasesBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    subtitle = CharBlock(required=False, help_text="Add your subtitle")
+    description = RichTextBlock(required=True, help_text="Add your description")
+    cases = ListBlock(CasesItemBlock())
+
+    class Meta:
+        template = "blocks/cases_block.html"
+        icon = "info-circle"
+        label = "Cases"
+        collapsed = True
+
+
 class AnchorBlock(StructBlock):
     anchor_tag = CharBlock(required=False, help_text="Write a tag you remember")
 
@@ -283,6 +307,7 @@ class BaseStreamBlock(StreamBlock):
     hero_block = HeroBlock(label_format="Hero")
     review_block = ReviewBlock(label_format="Reviews")
     services_block = ServicesBlock(label_format="Services")
+    cases_block = CasesBlock(label_format="Cases")
     text_image_block = TextImageBlock(label_format="Text & Image")
     page_list_block = PageListBlock(label_format="List with pages")
     highlight_block = HighlightBlock(label_format="Highlight")

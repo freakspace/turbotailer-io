@@ -1,0 +1,5 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if self.page_link %}<a href="{{ self.page_link.url }}">{% endif %}
+  {% picture self.image fill-320x220 format-{avif,webp,jpeg} class="border-[5px] lg:border-[15px] border-white rounded-xl shadow-lg" loading="lazy" %}
+  {% if self.page_link %}</a>{% endif %}
