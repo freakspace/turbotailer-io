@@ -215,6 +215,28 @@ class CasesBlock(StructBlock):
         collapsed = True
 
 
+class FeaturesItemBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    description = CharBlock(required=False, help_text="Add your description")
+    icon = ImageChooserBlock(required=True)
+
+    class Meta:
+        template = "blocks/features_item_block.html"
+        icon = "doc-empty-inverse"
+        label = "Feature"
+
+
+class FeaturesBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    features = ListBlock(FeaturesItemBlock())
+
+    class Meta:
+        template = "blocks/features_block.html"
+        icon = "info-circle"
+        label = "Features"
+        collapsed = True
+
+
 class AnchorBlock(StructBlock):
     anchor_tag = CharBlock(required=False, help_text="Write a tag you remember")
 
@@ -299,21 +321,22 @@ class BaseStreamBlock(StreamBlock):
     Define the custom blocks that `StreamField` will utilize
     """
 
-    heading_block = HeadingBlock()
-    paragraph_block = RichTextBlock(icon="pilcrow", template="blocks/paragraph_block.html")
-    image_block = ImageBlock()
-    block_quote = BlockQuote()
-    accordion_block = AccordionBlock(label_format="FAQ (Accordion)")
-    hero_block = HeroBlock(label_format="Hero")
-    review_block = ReviewBlock(label_format="Reviews")
-    services_block = ServicesBlock(label_format="Services")
-    cases_block = CasesBlock(label_format="Cases")
-    text_image_block = TextImageBlock(label_format="Text & Image")
-    page_list_block = PageListBlock(label_format="List with pages")
-    highlight_block = HighlightBlock(label_format="Highlight")
-    anchor_block = AnchorBlock(label_format="Anchor")
+    heading = HeadingBlock()
+    paragraph = RichTextBlock(icon="pilcrow", template="blocks/paragraph_block.html")
+    image = ImageBlock()
+    block = BlockQuote()
+    accordion = AccordionBlock(label_format="FAQ (Accordion)")
+    hero = HeroBlock(label_format="Hero")
+    review = ReviewBlock(label_format="Reviews")
+    services = ServicesBlock(label_format="Services")
+    cases = CasesBlock(label_format="Cases")
+    features = FeaturesBlock(label_format="Features")
+    text_image = TextImageBlock(label_format="Text & Image")
+    page_list = PageListBlock(label_format="List with pages")
+    highlight = HighlightBlock(label_format="Highlight")
+    anchor = AnchorBlock(label_format="Anchor")
     empty_space = EmptySpaceBlock(label_format="Empty Space")
 
     class Meta:
-        block_counts = {"accordion_block": {"min_num": 0, "max_num": 1}}
+        block_counts = {"accordion": {"min_num": 0, "max_num": 1}}
         collapsed = True
