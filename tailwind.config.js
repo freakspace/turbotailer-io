@@ -8,6 +8,7 @@ module.exports = {
       extend: {
         colors: {
           'customBeige': '#F2F0EB',
+          'customBeigeLight': '#F8F7F4',
         },
       },
     },

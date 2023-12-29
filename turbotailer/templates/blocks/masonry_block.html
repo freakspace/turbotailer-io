@@ -1,11 +1,11 @@
 {% load static wagtailcore_tags i18n %}
 
-<div class="container mx-auto mb-20 lg:mb-40">
+<div class="container mx-auto">
   <div class="px-4">
     {% if self.title %}<h2 class="text-2xl lg:text-6xl font-bold mb-10">{{ self.title }}</h2>{% endif %}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {% for feature in self.features %}
-        {% include_block feature %}
+      {% for item in self.items %}
+        {% include_block item %}
       {% endfor %}
     </div>
   </div>

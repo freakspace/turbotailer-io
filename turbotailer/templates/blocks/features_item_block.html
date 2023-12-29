@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div class="rounded-xl border-2 border-slate-200 p-6 bg-white">
+<div class="rounded-xl shadow-lg border border-slate-200 p-6 bg-customBeigeLight">
   {% picture self.icon width-80 format-{avif,webp,jpeg} loading="lazy" %}
   <h3 class="text-xl font-bold mb-3">{{ self.title }}</h3>
   <p class="text-justify">{{ self.description }}</p>

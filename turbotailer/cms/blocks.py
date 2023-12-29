@@ -237,6 +237,39 @@ class FeaturesBlock(StructBlock):
         collapsed = True
 
 
+class MasonryItemBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    description = CharBlock(required=False, help_text="Add your description")
+    icon = ImageChooserBlock(required=True)
+    image = ImageChooserBlock(required=True)
+    align_right = BooleanBlock(required=False, help_text="Align the image to the right")
+    col_span = ChoiceBlock(
+        choices=[
+            ("", "Select a col-span"),
+            ("1", "1"),
+            ("2", "2"),
+        ],
+        blank=True,
+        required=False,
+    )
+
+    class Meta:
+        template = "blocks/masonry_item_block.html"
+        icon = "doc-empty-inverse"
+        label = "Item"
+
+
+class MasonryBlock(StructBlock):
+    title = CharBlock(required=False, help_text="Add your title")
+    items = ListBlock(MasonryItemBlock())
+
+    class Meta:
+        template = "blocks/masonry_block.html"
+        icon = "info-circle"
+        label = "Masonry"
+        collapsed = True
+
+
 class AnchorBlock(StructBlock):
     anchor_tag = CharBlock(required=False, help_text="Write a tag you remember")
 
@@ -331,6 +364,7 @@ class BaseStreamBlock(StreamBlock):
     services = ServicesBlock(label_format="Services")
     cases = CasesBlock(label_format="Cases")
     features = FeaturesBlock(label_format="Features")
+    masonry = MasonryBlock(label_format="Masonry")
     text_image = TextImageBlock(label_format="Text & Image")
     page_list = PageListBlock(label_format="List with pages")
     highlight = HighlightBlock(label_format="Highlight")
