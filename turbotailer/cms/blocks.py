@@ -294,12 +294,20 @@ class TextImageBlock(StructBlock):
     )
     buttons = ListBlock(Button(required=True))
     reverse = BooleanBlock(required=False, help_text="Reverse the order of text and image")
-    shadow = BooleanBlock(required=False, help_text="Add a shadow to image")
 
     class Meta:
         template = "blocks/text_image_block.html"
         icon = "info-circle"
         label = "Text & Image"
+
+
+class TextImageRepeaterBlock(StructBlock):
+    items = ListBlock(TextImageBlock())
+
+    class Meta:
+        template = "blocks/text_image_repeater_block.html"
+        icon = "info-circle"
+        label = "Text & Image Repeater"
 
 
 class PageItemBlock(StructBlock):
@@ -375,6 +383,7 @@ class BaseStreamBlock(StreamBlock):
     features = FeaturesBlock(label_format="Features")
     masonry = MasonryBlock(label_format="Masonry")
     text_image = TextImageBlock(label_format="Text & Image")
+    text_image_repeater = TextImageRepeaterBlock(label_format="Text & Image Repeater")
     page_list = PageListBlock(label_format="List with pages")
     highlight = HighlightBlock(label_format="Highlight")
     anchor = AnchorBlock(label_format="Anchor")
