@@ -321,6 +321,15 @@ class PageListBlock(StructBlock):
         label = "List with pages"
 
 
+class AuditFormBlock(StructBlock):
+    background = ImageChooserBlock(required=False)
+
+    class Meta:
+        template = "blocks/audit_form.html"
+        icon = "info-circle"
+        label = "Audit form"
+
+
 class HighlightBlock(StructBlock):
     title = CharBlock(required=True, help_text="Add your title")
     button = Button(required=True)
@@ -370,6 +379,7 @@ class BaseStreamBlock(StreamBlock):
     highlight = HighlightBlock(label_format="Highlight")
     anchor = AnchorBlock(label_format="Anchor")
     empty_space = EmptySpaceBlock(label_format="Empty Space")
+    audit_form = AuditFormBlock(label_format="Audit Form")
 
     class Meta:
         block_counts = {"accordion": {"min_num": 0, "max_num": 1}}

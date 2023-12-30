@@ -1,0 +1,30 @@
+{% load i18n %}
+
+<form method="post"
+      action="{% url 'core:audit_create_view' %}"
+      id="audit-form"
+      class="static">
+  {% csrf_token %}
+  <div class="flex flex-col lg:flex-row gap-4 mb-5">
+    <!-- Name Field -->
+    <div class="flex-1">
+      {{ form.name }}
+      {{ form.name.errors }}
+    </div>
+    <!-- Website Field -->
+    <div class="flex-1">
+      {{ form.website }}
+      {{ form.website.errors }}
+    </div>
+    <!-- Email Field -->
+    <div class="flex-1">
+      {{ form.email }}
+      {{ form.email.errors }}
+    </div>
+  </div>
+  <!-- Submit Button -->
+  <button type="submit"
+          class="rounded-full bg-white text-black w-full py-2 font-bold text-md shadow-xl">
+    {% translate 'Send' %}
+  </button>
+</form>
