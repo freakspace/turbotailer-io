@@ -1,11 +1,11 @@
 {% load audit_form_tag wagtailimages_tags static i18n %}
 
-<div class="container relative mx-auto px-4 mb-40 lg:mb-20">
-  <div class="w-full lg:w-1/2 bg-black rounded-[20px]">
+<div class="container relative mx-auto px-4 mb-20 lg:mb-40">
+  <div class="w-full lg:w-2/3 bg-black rounded-[20px]">
     <div class="p-4 h-full">
       <div class="relative bg-gradient-to-b from-blue-400 to-blue-500 rounded-[15px] w-full h-full">
         <div class="relative z-10 p-8">
-          <h2 class="text-xl lg:text-4xl text-white drop-shadow-md font-bold mb-3 lg:mb-5">
+          <h2 class="text-xl lg:text-4xl text-white drop-shadow-md font-semibold mb-3 lg:mb-5">
             {% translate 'Få en gratis hjemmeside rapport' %}
           </h2>
           <p class="text-white text-md lg:text-xl drop-shadow-md mb-6 lg:mb-10">
@@ -13,7 +13,6 @@
           </p>
           {% get_audit_form %}
         </div>
-        <!-- Image Positioned Absolutely -->
       </div>
     </div>
   </div>

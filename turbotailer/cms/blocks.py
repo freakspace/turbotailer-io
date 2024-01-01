@@ -106,7 +106,7 @@ class USPBlock(StructBlock):
 
 class HeroBlock(StructBlock):
     title = RawHTMLBlock(required=True, help_text="Add your title")
-    sub_title = CharBlock(required=False, help_text="Add your sub title")
+    sub_title = RawHTMLBlock(required=False, help_text="Add your sub title")
     image = ImageChooserBlock(required=True)
     buttons = ListBlock(Button(required=False))
     usps = ListBlock(USPBlock(required=False))
@@ -366,6 +366,13 @@ class FooterColumnBlock(StructBlock):
         icon = "list-ul"
 
 
+class PriceTableBlock(StructBlock):
+    class Meta:
+        template = "blocks/price_table_block.html"
+        icon = "info-circle"
+        label = "Price table"
+
+
 class BaseStreamBlock(StreamBlock):
     """
     Define the custom blocks that `StreamField` will utilize
@@ -389,6 +396,7 @@ class BaseStreamBlock(StreamBlock):
     anchor = AnchorBlock(label_format="Anchor")
     empty_space = EmptySpaceBlock(label_format="Empty Space")
     audit_form = AuditFormBlock(label_format="Audit Form")
+    price_table = PriceTableBlock(label_format="Price table")
 
     class Meta:
         block_counts = {"accordion": {"min_num": 0, "max_num": 1}}

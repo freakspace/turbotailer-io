@@ -2,7 +2,7 @@
 
 {% get_site_root as site_root %}
 {% for menuitem in menuitems %}
-  <li class="{% if menuitem.active %}font-semibold{% endif %} flex items-center sm:mr-8 py-2 sm:py-0 {% if not forloop.last %}border-b-2 sm:border-0{% endif %}">
+  <li class="{% if menuitem.active %}font-semibold{% else %}font-medium{% endif %} flex items-center sm:mr-8 py-2 sm:py-0 {% if not forloop.last %}border-b-2 sm:border-0{% endif %}">
     {% if menuitem.show_dropdown %}
       <div>
         <button @click="open = !open"
@@ -19,7 +19,7 @@
             aria-labelledby="dropdownMenuButton-{{ forloop.counter }}">
           <!-- Parent Item as the First Item in Dropdown -->
           <li>
-            <a class="block px-4 py-2 text-normal text-gray-700 hover:bg-gray-100"
+            <a class="block px-4 py-2 font-medium text-gray-700 hover:bg-gray-100"
                href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
           </li>
           <!-- Child Items -->
