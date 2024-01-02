@@ -1,14 +1,18 @@
-{% load static i18n cookie_consent_tags navigation_tags wagtailimages_tags wagtailuserbar %}
+{% load utils static i18n cookie_consent_tags navigation_tags wagtailimages_tags wagtailuserbar %}
 {% load render_bundle from webpack_loader %}
+{% load utils %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 {% site_info as site_info %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
-    {% load django_browser_reload %}
-    {% load livereload_tags %}
+    {% live_reload as live_reload %}
+    {% if live_reload %}
+      {% load django_browser_reload %}
+      {% load livereload_tags %}
 
+    {% endif %}
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>

@@ -356,3 +356,5 @@ WAGTAILIMAGES_JPEG_QUALITY = 40
 WAGTAILIMAGES_WEBP_QUALITY = 45
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
+
+LIVE_RELOAD = False

@@ -1,6 +1,7 @@
 import datetime
 
 from django import template
+from django.conf import settings
 
 register = template.Library()
 
@@ -20,3 +21,9 @@ def to_float(value):
 @register.filter(name="unix_to_datetime")
 def unix_to_datetime(value):
     return datetime.datetime.fromtimestamp(int(value))
+
+
+@register.simple_tag
+def live_reload():
+    """Check the boolean value of the given setting."""
+    return getattr(settings, "LIVE_RELOAD", False)
