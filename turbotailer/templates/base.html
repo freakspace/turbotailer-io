@@ -107,6 +107,8 @@
     </div>
     {% include "includes/footer.html" %}
     {% include 'partials/cookies.html' %}
-    {% django_browser_reload_script %}
+    {% if live_reload %}
+      {% django_browser_reload_script %}
+    {% endif %}
   </body>
 </html>
