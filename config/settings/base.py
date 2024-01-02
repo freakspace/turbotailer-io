@@ -348,7 +348,6 @@ WEBPACK_LOADER = {
 
 WAGTAILADMIN_BASE_URL = "wagtail"
 WAGTAIL_SITE_NAME = "Turbotailer"
-# WAGTAIL_SITE_ROOT_PAGE_MODEL = "abr_vin.HomePage"
 
 # Make low-quality but small images
 WAGTAILIMAGES_AVIF_QUALITY = 50

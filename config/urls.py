@@ -51,7 +51,7 @@ if settings.DEBUG:
             path("__debug__/", include(debug_toolbar.urls)),
         ] + urlpatterns
 
-    if "livereload" and "django_browser_reload" in settings.INSTALLED_APPS:
+    if settings.LIVE_RELOAD:
         urlpatterns = [
             path("__reload__/", include("django_browser_reload.urls")),
         ] + urlpatterns

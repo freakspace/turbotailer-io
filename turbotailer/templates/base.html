@@ -5,14 +5,9 @@
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 {% site_info as site_info %}
+{% live_reload as live_reload %}
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
-    {% live_reload as live_reload %}
-    {% if live_reload %}
-      {% load django_browser_reload %}
-      {% load livereload_tags %}
-
-    {% endif %}
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
@@ -81,7 +76,9 @@
         {% endif %}
       </template>
     {% endblock javascript %}
-    {% livereload_script %}
+    {% if live_reload %}
+      {% include 'live_reload_script.html' %}
+    {% endif %}
   </head>
   <body class="bg-customBeige">
     <template id="analytics-scripts-body">
@@ -108,7 +105,7 @@
     {% include "includes/footer.html" %}
     {% include 'partials/cookies.html' %}
     {% if live_reload %}
-      {% django_browser_reload_script %}
+      {% include 'django_browser_reload_script.html' %}
     {% endif %}
   </body>
 </html>

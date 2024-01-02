@@ -80,8 +80,8 @@ ROBOTS = [
 ]
 
 # Hot reload locally
-INSTALLED_APPS += ["livereload", "django_browser_reload"]
 LIVE_RELOAD = True
+INSTALLED_APPS += ["livereload", "django_browser_reload"]
 
 LIVERELOAD_HOST = "127.0.0.1"
 LIVERELOAD_PORT = "8001"
