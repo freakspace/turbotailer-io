@@ -4,6 +4,11 @@ module.exports = {
     content: [
       './turbotailer/templates/**/*.{html,css,js}'
     ],
+    safelist: [
+      'lg:col-span-1',
+      'lg:col-span-2',
+      'lg:col-span-3',
+    ],
     theme: {
       container: {
         center: true,
@@ -18,9 +23,9 @@ module.exports = {
           sans: ['"GeneralSans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         },
       },
-      fontFamily: {
+      /* fontFamily: {
         sans: ['"GeneralSans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      },
+      }, */
     },
     plugins: [
       require("@tailwindcss/forms"),

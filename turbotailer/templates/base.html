@@ -24,6 +24,7 @@
     {% if request.in_preview_panel %}<base target="_blank" />{% endif %}
     <meta name="description" content="Turbotailer" />
     <meta name="author" content="Emil Nielsen" />
+    <script src="https://cdn.tailwindcss.com"></script>
     {% image site_info.company_favicon fill-32x32 as favicon %}
     <link rel="icon" href="{{ favicon.url }}" />
     {% block css %}
