@@ -6,6 +6,8 @@ module.exports = {
   target: 'web',
   context: path.join(__dirname, '../'),
   entry: {
+    modal: path.resolve(__dirname, '../turbotailer/static/js/modal'),
+    cookiebarmodule: path.resolve(__dirname, '../turbotailer/static/js/cookiebar.module'),
     project: path.resolve(__dirname, '../turbotailer/static/js/project'),
     vendors: path.resolve(__dirname, '../turbotailer/static/js/vendors'),
   },

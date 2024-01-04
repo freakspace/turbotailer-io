@@ -10,67 +10,56 @@
   {% all_cookie_groups 'cookie-consent__cookie-groups' %}
   <template id="cookie-consent__cookie-bar">
     {% with cookie_groups=cookie_groups|join:", " %}
-      <div class="modal fade"
-           id="cookiePopup"
-           tabindex="-1"
-           aria-labelledby="cookiePopupLabel"
-           aria-hidden="true"
-           data-bs-backdrop="static">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="cookiePopupLabel">Vi anvender cookies</h1>
+      <div id="cookieModal">
+        <div class="fixed inset-0 flex items-center justify-center p-4 bg-black/50 z-50">
+          <div class="bg-white rounded-lg overflow-hidden shadow-xl max-w-lg w-full">
+            <div class="bg-gray-100 px-4 py-2">
+              <p class="text-lg font-semibold">Vi anvender cookies</p>
             </div>
-            <div class="modal-body">
-              <div class="cookie-bar">
-                <p>
-                  Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring.
-                  Venligst tilkendegiv hvilke cookies du accepterer
-                </p>
-                <div class="accordion mb-3" id="cookieAccordion">
-                  {% for group in all_cookies %}
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="heading-{{ forloop.counter }}">
-                        <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapse-{{ forloop.counter }}"
-                                aria-expanded="false"
-                                aria-controls="collapse-{{ forloop.counter }}">{{ group }}</button>
-                      </h2>
-                      <div id="collapse-{{ forloop.counter }}"
-                           class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
-                           aria-labelledby="heading-{{ forloop.counter }}"
-                           data-bs-parent="#cookieAccordion">
-                        <div class="accordion-body">
-                          <table class="table table-sm table-bordered">
-                            <thead>
-                              <tr>
-                                <th>Navn</th>
-                                <th>Beskrivelse</th>
-                                <th>Sti</th>
-                                <th>Domæne</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {% for cookie in group.cookie_set.all %}
-                                <tr>
-                                  <td>{{ cookie.name }}</td>
-                                  <td>{{ cookie.description }}</td>
-                                  <td>{{ cookie.path }}</td>
-                                  <td>{{ cookie.domain }}</td>
-                                </tr>
-                              {% endfor %}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
+            <div class="space-y-4 p-4">
+              <p>
+                Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring.
+                Venligst tilkendegiv hvilke cookies du accepterer
+              </p>
+              <div class="space-y-3" id="cookieAccordion">
+                {% for group in all_cookies %}
+                  <div class="border rounded-lg">
+                    <p class="bg-gray-200 px-4 py-2">{{ group }}</p>
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                          <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Navn</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Beskrivelse</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sti</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Domæne</th>
+                          </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                          {% for cookie in group.cookie_set.all %}
+                            <tr>
+                              <td class="px-6 py-4">{{ cookie.name }}</td>
+                              <td class="px-6 py-4">{{ cookie.description }}</td>
+                              <td class="px-6 py-4">{{ cookie.path }}</td>
+                              <td class="px-6 py-4">{{ cookie.domain }}</td>
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
                     </div>
-                  {% endfor %}
-                </div>
-                <button type="button" class="cookie-consent__accept btn btn-primary">{% translate 'Accepter alle' %}</button>
-                <button type="button" class="cookie-consent__decline btn btn-primary">{% translate 'Kun nødvendige' %}</button>
-                <a href="{{ url_cookies }}">{% translate 'Indstillinger' %}</a>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="flex space-x-2">
+                <button type="button"
+                        class="cookie-consent__accept px-4 py-2 font-semibold bg-black text-white rounded-full flex-grow">
+                  {% translate 'Accepter alle' %}
+                </button>
+                <button type="button"
+                        class="cookie-consent__decline px-4 py-2 font-semibold text-black rounded-full border-2 border-black flex-grow">
+                  {% translate 'Kun nødvendige' %}
+                </button>
+                <!-- <a href="{{ url_cookies }}" class="inline-flex items-center">{% translate 'Indstillinger' %}</a> -->
               </div>
             </div>
           </div>

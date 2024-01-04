@@ -1,29 +1,31 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% url "cookie_consent_cookie_group_list" as url_cookies %}
-<!-- Top section with 4 columns -->
-<div class="row mb-5">
-  <!-- Columns -->
-  {% for block in footer_columns %}
-    {% include_block block %}
-  {% endfor %}
-  <!-- Logo and Address Column -->
-  <div class="col-12 col-md">
-    {% picture site_info.company_logo width-200 format-{avif,webp,jpeg} loading="lazy" class="img-fluid mb-3" %}
-    <address class="text-white">
-      {{ site_info.address }}
-    </address>
+<div class="border-slate-200 border-[1.5px] rounded-lg shadow-lg p-4 bg-[#F8F7F4]">
+  <!-- Top section with 4 columns -->
+  <div class="flex flex-wrap mb-5">
+    <!-- Columns -->
+    {% for block in footer_columns %}
+      <div class="px-2 w-full md:w-1/4">{% include_block block %}</div>
+    {% endfor %}
+    <!-- Logo and Address Column -->
+    <div class="px-2 w-full md:w-1/4">
+      {% picture site_info.company_logo width-200 format-{avif,webp,jpeg} loading="lazy" %}
+      <address>
+        {{ site_info.address }}
+      </address>
+    </div>
   </div>
-</div>
-<hr class="border-white mb-3" />
-<!-- Bottom section for trademark and cookies link -->
-<div class="row">
-  <div class="col-md-6 text-white">
-    <p>© {% now "Y" %} {{ site_info.company_name }}</p>
-  </div>
-  <div class="col-md-3 text-md-start">
-    <a href="{{ url_cookies }}" class="text-white text-decoration-none me-2">
-      <i class="bi bi-cookie me-2"></i> {% translate 'Cookieindstillinger' %}
-    </a>
+  <hr class="border-slate-200 border-[1.5px] mb-3" />
+  <!-- Bottom section for trademark and cookies link -->
+  <div class="flex flex-wrap">
+    <div class="w-full md:w-1/2">
+      <p>© {% now "Y" %} {{ site_info.company_name }}</p>
+    </div>
+    <div class="w-full md:w-1/3 md:text-left">
+      <a href="{{ url_cookies }}" class="no-underline mr-2 flex items-center">
+        <i class="bi bi-cookie mr-2"></i> {% translate 'Cookieindstillinger' %}
+      </a>
+    </div>
   </div>
 </div>

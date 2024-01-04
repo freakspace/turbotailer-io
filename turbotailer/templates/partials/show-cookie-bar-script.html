@@ -1,11 +1,15 @@
 {% load static cookie_consent_tags %}
 
 {% static "js/cookiebar.module.js" as cookiebar_src %}
+{% static "js/modal.js" as modal_src %}
 <script type="module">
   import {
     showCookieBar
   } from '{{ cookiebar_src }}';
 
+  import {
+    Modal
+  } from '{{ modal_src }}';
 
   const showAnalyticsInHead = () => {
     const templateNode = document.getElementById('analytics-scripts-head');
@@ -29,7 +33,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-
+    // cookieModal = new Modal("cookieModal", "cookieBtn", "close");
     let cookieModal;
 
     showCookieBar({
@@ -37,25 +41,27 @@
       templateSelector: '#cookie-consent__cookie-bar',
       cookieGroupsSelector: '#cookie-consent__cookie-groups',
       onShow: () => {
-        const cookieElement = document.getElementById('cookiePopup');
+        const cookieElement = document.getElementById('cookieModal');
         // Initialize the modal only if it hasn't been initialized yet
         if (!cookieModal && cookieElement) {
-          cookieModal = new bootstrap.Modal(cookieElement);
+          console.log("Initializing cookie modal")
+          cookieModal = new Modal("cookieModal", "cookieBtn", "close");
+          cookieModal.open()
         }
         if (cookieModal) {
-          cookieModal.show();
+          cookieModal.open();
         }
 
       },
       onAccept: (cookieGroups) => {
         onAcceptAnalytics(cookieGroups);
         if (cookieModal) {
-          cookieModal.hide();
+          cookieModal.close();
         }
       },
       onDecline: () => {
         if (cookieModal) {
-          cookieModal.hide();
+          cookieModal.close();
         }
       },
     })

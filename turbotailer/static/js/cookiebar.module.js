@@ -21,6 +21,7 @@
  * - When a user accepts or declines (all) cookies, the call to the backend is made via
  *   a fetch request, bypassing any page caches and preventing full-page reloads.
  */
+
 const DEFAULTS = {
     statusUrl: undefined,
     // TODO: also accept element rather than selector?

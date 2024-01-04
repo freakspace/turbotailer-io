@@ -16,7 +16,8 @@ module.exports = {
       'shadow-lg',
       'placeholder-white',
       'text-white',
-      'w-full'
+      'w-full',
+      'overflow-hidden'
     ],
     theme: {
       container: {
