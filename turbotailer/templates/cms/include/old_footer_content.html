@@ -3,6 +3,20 @@
 {% url "cookie_consent_cookie_group_list" as url_cookies %}
 <!-- Top section with 4 columns -->
 <div class="row mb-5">
+  <!-- Contact Us Column -->
+  <div class="col-12 col-md">
+    <h3 class="text-white">{% translate 'Kontakt os' %}</h3>
+    <ul class="list-unstyled text-white">
+      <li>
+        <i class="bi bi-envelope-at me-2"></i>
+        {{ site_info.email }}
+      </li>
+      <li>
+        <i class="bi bi-telephone me-2"></i>
+        {{ site_info.phone }}
+      </li>
+    </ul>
+  </div>
   <!-- Columns -->
   {% for block in footer_columns %}
     {% include_block block %}

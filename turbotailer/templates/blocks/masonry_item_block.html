@@ -1,10 +1,15 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags i18n %}
 
-<div class="rounded-xl shadow-lg border border-slate-200 pt-6 pl-6 {% if not self.align_right %}pr-6{% endif %} bg-customBeigeLight flex flex-col h-full col-span-1 lg:col-span-{{ self.col_span }}">
+<div class="relative rounded-xl shadow-lg border border-slate-200 pt-6 pl-6 {% if not self.align_right %}pr-6{% endif %} bg-customBeigeLight flex flex-col h-full col-span-1 lg:col-span-{{ self.col_span }}">
   {% picture self.icon width-80 format-{avif,webp,jpeg} loading="lazy" %}
-  <h3 class="text-xl font-semibold mb-3">{{ self.title }}</h3>
-  <p class="text-justify mb-5">{{ self.description }}</p>
+  <h3 class="text-2xl font-semibold mb-3">{{ self.title }}</h3>
+  <p class="text-justify mb-5 text-lg">{{ self.description }}</p>
   <div class="mt-auto {% if self.align_right %}ml-auto{% else %}mx-auto{% endif %}">
     {% picture self.image original format-{avif,webp,jpeg} loading="lazy" %}
   </div>
+  {% if self.is_premium %}
+    <div class="font-sans text-lg lg:text-xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold absolute right-6">
+      <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">{% translate 'Turbo' %}</span>
+    </div>
+  {% endif %}
 </div>

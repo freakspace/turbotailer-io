@@ -78,10 +78,10 @@ class FooterText(
 
 class SiteInfo(models.Model):
     site = models.OneToOneField(Site, on_delete=models.CASCADE, related_name="custom_site_info")
-    phone = models.CharField(max_length=20)
-    email = models.EmailField()
-    company_name = models.CharField(max_length=255)
-    address = models.TextField()
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    company_name = models.CharField(max_length=255, null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
     company_logo = models.OneToOneField(
         "wagtailimages.Image",
         null=True,
@@ -97,6 +97,7 @@ class SiteInfo(models.Model):
         related_name="+",
     )
     google_analytics = models.CharField(max_length=20, null=True, blank=True)
+    google_ads = models.CharField(max_length=20, null=True, blank=True)
     tag_manager = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):

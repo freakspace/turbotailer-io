@@ -252,6 +252,7 @@ class MasonryItemBlock(StructBlock):
         blank=True,
         required=False,
     )
+    is_premium = BooleanBlock(required=False, help_text="Give a special 'premium' badge")
 
     class Meta:
         template = "blocks/masonry_item_block.html"
@@ -330,8 +331,6 @@ class PageListBlock(StructBlock):
 
 
 class AuditFormBlock(StructBlock):
-    background = ImageChooserBlock(required=False)
-
     class Meta:
         template = "blocks/audit_form.html"
         icon = "info-circle"
