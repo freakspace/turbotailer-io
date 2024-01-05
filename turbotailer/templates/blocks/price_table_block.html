@@ -14,9 +14,19 @@
   }
 </style>
 <div class="container">
+  <!-- border bg-white rounded-xl shadow-lg -->
+  <div class="mt-6 flex border rounded-xl mb-3 p-2 shadow-lg sticky top-4 z-50 bg-customBeige lg:hidden">
+    <div class="nav-item p-3 flex-auto text-center font-semibold border bg-white rounded-xl shadow-lg"
+         data-target="plan1">{% translate 'Starter' %}</div>
+    <div class="nav-item p-3 flex-auto text-center font-semibold"
+         data-target="plan2">{% translate 'Turbo' %}</div>
+    <div class="nav-item p-3 flex-auto text-center font-semibold"
+         data-target="plan3">{% translate 'Custom' %}</div>
+  </div>
   <div class="flex flex-col md:flex-row justify-center">
     <!-- Basic Plan -->
-    <div class="flex-1 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200">
+    <div class="priceplan flex-1 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200"
+         id="plan1">
       <div class="flex justify-between bg-white px-6 py-4 shadow-lg shadow-black/2 border-b-[1.5px] border-slate-200">
         <h2 class="text-xl font-semibold">{% translate 'Starter' %}</h2>
         <a href="" class="underline font-semibold">{% translate 'Book et møde' %}</a>
@@ -55,14 +65,15 @@
       </div>
     </div>
     <!-- Standard Plan -->
-    <div class="flex-1 rounded-t-xl lg:rounded-t-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200">
+    <div class="priceplan flex-1 rounded-t-xl lg:rounded-t-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200"
+         id="plan2">
       <div class="flex justify-between bg-white px-6 py-4 shadow-md shadow-black/5 border-b-[1.5px] border-slate-200">
         <h2 class="text-xl font-semibold">{% translate 'Turbo' %}</h2>
         <a href="" class="underline font-semibold">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
         <p class="text-lg mb-6 lg:h-[100px]">
-          {% translate 'Du får alt fra starter men op til 3 månedlige ændringsønsker samt mange valgfrie functioner som f.eks. betalinger og medarbejderlogin' %}
+          {% translate 'Du får alt fra starter men op til 3 månedlige ændringsønsker samt mange valgfrie funktioner som f.eks. betalinger og medarbejderlogin' %}
         </p>
         <div class="text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
           <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">1999 kr / md</span>
@@ -90,7 +101,8 @@
       </div>
     </div>
     <!-- Premium Plan -->
-    <div class="flex-1 rounded-t-xl lg:rounded-r-xl lg:rounded-l-none overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200">
+    <div class="priceplan flex-1 rounded-t-xl lg:rounded-r-xl lg:rounded-l-none overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200"
+         id="plan3">
       <div class="flex justify-between bg-white px-6 py-4 shadow-md shadow-black/5 border-b-[1.5px] border-slate-200">
         <h2 class="text-xl font-semibold">{% translate 'Custom' %}</h2>
         <a href="" class="underline font-semibold">{% translate 'Book et møde' %}</a>
@@ -106,8 +118,7 @@
         <h3 class="text-xl font-semibold mb-3">{% translate 'Snak med Emil' %}</h3>
         <button type="button"
                 class="w-full text-md font-semibold px-4 rounded-full h-14 items-center bg-black text-white pe-3 flex"
-                data-bs-toggle="modal"
-                data-bs-target="#formModal">
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">
           <div class="grow text-left">{% translate 'Book et møde' %}</div>
           <span class="bg-white text-black h-10 w-10 rounded-full ms-3 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg"

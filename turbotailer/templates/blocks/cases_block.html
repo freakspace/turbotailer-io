@@ -1,22 +1,24 @@
 {% load static wagtailcore_tags i18n %}
 
-<div class="container">
-  <h2 class="text-2xl lg:text-6xl font-semibold mb-8">
-    {% if self.title %}<span class="text-slate-600">{{ self.title }}</span>{% endif %}
-    {% if self.subtitle %}
-      <br />
-      <span class="text-black">{{ self.subtitle }}</span>
-    {% endif %}
-  </h2>
-  <img src="{% static 'images/illustrations/horizontal_line.png' %}"
-       class="mb-8"
-       alt="line" />
-  {% if self.description %}<div class="mb-16 text-lg lg:text-xl">{{ self.description|safe }}</div>{% endif %}
-</div>
-<div class="flex justify-center mb-20 lg:mb-40">
-  {% for case in self.cases %}
-    <div class="transform custom-rotate-{{ forloop.counter }} -ml-14 first:ml-0 z-[{{ forloop.counter }}] {% if forloop.counter > 3 %}hidden lg:block{% endif %}">
-      {% include_block case %}
-    </div>
-  {% endfor %}
+<div class="overflow-x-hidden">
+  <div class="container">
+    <h2 class="text-3xl lg:text-6xl font-semibold mb-8">
+      {% if self.title %}<span class="text-slate-600">{{ self.title }}</span>{% endif %}
+      {% if self.subtitle %}
+        <br />
+        <span class="text-black">{{ self.subtitle }}</span>
+      {% endif %}
+    </h2>
+    <img src="{% static 'images/illustrations/horizontal_line.png' %}"
+         class="mb-8"
+         alt="line" />
+    {% if self.description %}<div class="mb-16 text-lg lg:text-xl">{{ self.description|safe }}</div>{% endif %}
+  </div>
+  <div class="flex justify-center mb-20 lg:mb-40">
+    {% for case in self.cases %}
+      <div class="transform custom-rotate-{{ forloop.counter }} -ml-14 first:ml-0 z-[{{ forloop.counter }}] {% if forloop.counter > 3 %}hidden lg:block{% endif %}">
+        {% include_block case %}
+      </div>
+    {% endfor %}
+  </div>
 </div>

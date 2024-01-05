@@ -36,10 +36,13 @@
           </svg>
         </button>
       </div>
+      <!-- Calendly link widget begin -->
       <button type="button"
-              class="font-semibold rounded-full border-2 border-black shadow-md px-4 py-2 hidden lg:block">
+              class="font-semibold rounded-full border-2 border-black shadow-md px-4 py-2 hidden lg:block"
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">
         {% translate 'Book et møde' %}
       </button>
+      <!-- Calendly link widget end -->
     </div>
     <div id="dropdownMenu" hidden>
       <ul class="mr-auto">
