@@ -371,6 +371,8 @@ class PriceTableBlock(StructBlock):
         icon = "info-circle"
         label = "Price table"
 
+    image = ImageChooserBlock(required=False)
+
 
 class BaseStreamBlock(StreamBlock):
     """
