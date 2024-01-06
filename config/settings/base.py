@@ -94,6 +94,7 @@ THIRD_PARTY_APPS = [
     "django_celery_beat",
     "webpack_loader",
     "cookie_consent",
+    "wagtailmenus",
 ]
 
 LOCAL_APPS = [
@@ -205,6 +206,7 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "turbotailer.users.context_processors.allauth_settings",
+                "wagtailmenus.context_processors.wagtailmenus",
             ],
         },
     }

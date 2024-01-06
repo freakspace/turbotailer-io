@@ -4,15 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Open menu mobile
     var button = document.getElementById('dropdownButton');
     var dropdown = document.getElementById('dropdownMenu');
-
-    button.addEventListener('click', function() {
-        var isHidden = dropdown.hasAttribute('hidden');
-        if (isHidden) {
-            dropdown.removeAttribute('hidden');
-        } else {
-            dropdown.setAttribute('hidden', '');
-        }
-    });
+    if(button && dropdown){
+        button.addEventListener('click', function() {
+            var isHidden = dropdown.hasAttribute('hidden');
+            if (isHidden) {
+                dropdown.removeAttribute('hidden');
+            } else {
+                dropdown.setAttribute('hidden', '');
+            }
+        });
+    }
 });
 
 
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentSection = '';
         document.querySelectorAll('.priceplan').forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 50) {
+            if (window.scrollY >= sectionTop - 200) {
                 currentSection = section.getAttribute('id');
             }
         });

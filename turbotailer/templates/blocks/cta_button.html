@@ -8,11 +8,11 @@
       {{ self.title }}
     </button>
   {% elif self.anchor %}
-    <button href="#{{ self.anchor }}"
-            type="button"
-            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}">
+    <a href="#{{ self.anchor }}"
+       type="button"
+       class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}">
       {{ self.title }}
-    </button>
+    </a>
   {% elif self.open_modal %}
     <button type="button"
             class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}"

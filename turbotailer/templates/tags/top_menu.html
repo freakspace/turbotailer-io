@@ -1,9 +1,8 @@
-{% load navigation_tags wagtailcore_tags i18n %}
+{% load menu_tags i18n %}
 
-{% get_site_root as site_root %}
-{% for menuitem in menuitems %}
+{% for menuitem in menu_items %}
   <li class="{% if menuitem.active %}font-semibold{% else %}font-medium{% endif %} flex items-center sm:mr-8 py-2 sm:py-0 {% if not forloop.last %}border-b-2 sm:border-0{% endif %}">
-    {% if menuitem.show_dropdown %}
+    {% if menuitem.has_children_in_menu %}
       <div>
         <button @click="open = !open"
                 class="bg-transparent border-none px-0 py-2"
@@ -11,7 +10,7 @@
                 id="dropdownMenuButton-{{ forloop.counter }}"
                 aria-haspopup="true"
                 aria-expanded="false">
-          {{ menuitem.title }} <i class="bi bi-three-dots text-secondary"></i>
+          {{ menuitem.text }} <i class="bi bi-three-dots text-secondary"></i>
         </button>
         <!-- Dropdown Menu -->
         <ul x-show="open"
@@ -20,14 +19,14 @@
           <!-- Parent Item as the First Item in Dropdown -->
           <li>
             <a class="block px-4 py-2 font-medium text-gray-700 hover:bg-gray-100"
-               href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+               href="{{ menuitem.href }}">{{ menuitem.text }}</a>
           </li>
           <!-- Child Items -->
-          {% top_menu_children parent=menuitem %}
+          <!-- Remember to add childs -->
         </ul>
       </div>
     {% else %}
-      <a href="{% pageurl menuitem %}" class="text-black hover:text-gray-800">{{ menuitem.title }}</a>
+      <a href="{{ menuitem.href }}" class="text-black hover:text-gray-800">{{ menuitem.text }}</a>
     {% endif %}
   </li>
 {% endfor %}

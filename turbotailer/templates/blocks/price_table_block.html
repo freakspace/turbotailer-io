@@ -14,8 +14,9 @@
   }
 </style>
 <div class="container">
+  <h2 class="text-3xl lg:text-6xl font-semibold mb-5 lg:mb-10">{% translate 'Planer' %}</h2>
   <!-- border bg-white rounded-xl shadow-lg -->
-  <div class="mt-6 flex border rounded-xl mb-3 p-2 shadow-lg sticky top-4 z-50 bg-customBeige lg:hidden">
+  <div class="mt-6 mb-5 flex border rounded-xl p-2 shadow-lg sticky top-4 z-50 bg-customBeige lg:hidden">
     <div class="nav-item p-3 flex-auto text-center font-semibold border bg-white rounded-xl shadow-lg"
          data-target="plan1">{% translate 'Starter' %}</div>
     <div class="nav-item p-3 flex-auto text-center font-semibold"
@@ -33,14 +34,16 @@
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <p class="text-lg mb-6 lg:h-[100px]">
-          {% translate 'Professionel hjemmeside med unikt design inklusive 1 månedligt ændringsønske og sikkerhedsopdateringer' %}
-        </p>
-        <div class="font-sans text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-xl bg-black px-3 py-2 font-semibold inline-block">
-          <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">999 kr / md</span>
+        <div class="lg:h-64">
+          <p class="text-lg mb-6 lg:h-[100px]">
+            {% translate 'Professionel hjemmeside med unikt design inklusive 1 månedligt ændringsønske og sikkerhedsopdateringer' %}
+          </p>
+          <div class="font-sans text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-xl bg-black px-3 py-2 font-semibold inline-block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">999 kr / md</span>
+          </div>
+          <p>{% translate 'Ekskl. moms' %}</p>
+          <p>{% translate 'Ingen binding' %}</p>
         </div>
-        <p>{% translate 'Ekskl. moms' %}</p>
-        <p>{% translate 'Ingen binding' %}</p>
         <hr class="mt-4 mb-3 border border-slate-200" />
         <h3 class="text-xl font-semibold mb-3">{% translate 'Inkluderer' %}</h3>
         <ul class="mb-6 custom-list-icon lg:h-96">
@@ -74,14 +77,16 @@
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <p class="text-lg mb-6 lg:h-[100px]">
-          {% translate 'Du får alt fra starter men op til 3 månedlige ændringsønsker samt mange valgfrie funktioner som f.eks. betalinger og medarbejderlogin' %}
-        </p>
-        <div class="text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
-          <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">1999 kr / md</span>
+        <div class="lg:h-64">
+          <p class="text-lg mb-6 lg:h-[100px]">
+            {% translate 'Du får alt fra starter men op til 3 månedlige ændringsønsker samt mange valgfrie funktioner som f.eks. betalinger og medarbejderlogin' %}
+          </p>
+          <div class="text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">1999 kr / md</span>
+          </div>
+          <p>{% translate 'Ekskl. moms' %}</p>
+          <p>{% translate 'Ingen binding' %}</p>
         </div>
-        <p>{% translate 'Ekskl. moms' %}</p>
-        <p>{% translate 'Ingen binding' %}</p>
         <hr class="mt-4 mb-3 border border-slate-200" />
         <h3 class="text-xl font-semibold mb-3">{% translate 'Inkluderer' %}</h3>
         <ul class="mb-6 custom-list-icon lg:h-96">
@@ -111,11 +116,13 @@
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <p class="text-lg mb-6 lg:h-[100px]">
-          {% translate 'Kontakt os og hør nærmere om mulighederne for at lave en specialtilpasset hjemmeside som ikke passer indenfor de almindelige rammer.' %}
-        </p>
-        <div class="text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
-          <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">{% translate 'Pris efter aftale' %}</span>
+        <div class="lg:h-64">
+          <p class="text-lg mb-6 lg:h-[100px]">
+            {% translate 'Kontakt os og hør nærmere om mulighederne for at lave en specialtilpasset hjemmeside som ikke passer indenfor de almindelige rammer.' %}
+          </p>
+          <div class="text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
+            <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">{% translate 'Pris efter aftale' %}</span>
+          </div>
         </div>
         <hr class="mt-4 mb-3 border border-slate-200" />
         <h3 class="text-xl font-semibold mb-3">{% translate 'Få en snak med Emil' %}</h3>

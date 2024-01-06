@@ -4,6 +4,12 @@
 
 @import "_fonts.scss";
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 .custom-rotate-1 {
     rotate: (-15deg);
 }

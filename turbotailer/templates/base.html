@@ -1,6 +1,5 @@
 {% load utils static i18n cookie_consent_tags navigation_tags wagtailimages_tags wagtailuserbar %}
 {% load render_bundle from webpack_loader %}
-{% load utils %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
@@ -104,19 +103,17 @@ src="https://www.googletagmanager.com/gtag/js?id={{ site_info.google_analytics }
         width="0"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
     </template>
-    <div class="position-relative">
-      {% wagtailuserbar %}
-      {% block header %}
-        {% include "includes/header.html" %}
-      {% endblock header %}
-      {% block messages %}
-        <!-- {% include "includes/messages.html" %} -->
-      {% endblock messages %}
-      <main>
-        {% block content %}
-        {% endblock content %}
-      </main>
-    </div>
+    {% wagtailuserbar %}
+    {% block header %}
+      {% include "includes/header.html" %}
+    {% endblock header %}
+    {% block messages %}
+      <!-- {% include "includes/messages.html" %} -->
+    {% endblock messages %}
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
     {% include "includes/footer.html" %}
     {% include 'partials/cookies.html' %}
     {% if live_reload %}
