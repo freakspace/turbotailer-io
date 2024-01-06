@@ -11,18 +11,59 @@ Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings
 
 ## Prepare git
 
-Setup the git user
+ - While logged in ubuntu 22
 
-- Run chmod +x prepare_git.sh
-- Run the script: Execute the script with ./prepare_git.sh.
+### Step 1 ###
+ $ git --version
+ $ sudo apt update
+ $ sudo apt upgrade
+ $ sudo apt install git
+ $ git config --global user.name "YOUR NAME"
+ $ git config --global user.email "YOUR GITHUB USERNAME"
+
+### Step 2 ###
+
+ $ ssh-keygen
+ $ cat ~/.ssh/id_rsa.pub
+
+### Step 3 ###
+
+ - Copy the SSH key and add to your github account
+ - Clone the github repositoy
 
 
 ## Prepare docker
 
-Setup docker compose
 
-- Make the script executable: Run chmod +x prepare_docker.sh
-- Run the script: Execute the script with ./prepare_docker.sh.
+- Make the script executable:
+
+      $ chmod +x prepare_docker.sh
+
+- Execute the script with:
+
+      $ ./prepare_docker.sh
+
+
+## Running docker first time
+
+### In production ###
+      $ sudo docker compose -f production.yml build
+      $ sudo docker compose -f production.yml run --rm django python manage.py migrate
+      $ sudo docker compose -f production.yml run --rm django python manage.py createsuperuser
+      $ sudo docker compose -f production.yml up
+
+### In staging ###
+      $ sudo docker compose -f stage.yml build
+      $ sudo docker compose -f stage.yml run --rm django python manage.py migrate
+      $ sudo docker compose -f stage.yml run --rm django python manage.py createsuperuser
+      $ sudo docker compose -f stage.yml up
+
+### Locally ###
+      $ docker compose -f local.yml build
+      $ docker compose -f local.yml run --rm django python manage.py migrate
+      $ docker compose -f local.yml run --rm django python manage.py createsuperuser
+      $ docker compose -f local.yml up
+
 
 
 ## Basic Commands
