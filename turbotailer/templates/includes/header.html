@@ -3,13 +3,13 @@
 {% wagtail_site as current_site %}
 <div class="container sticky top-4 z-40">
   <!--Main nav-->
-  <nav class="bg-white rounded-2xl border-2 bordergray-300 mt-6 px-3 py-2 md:px-4 md:py-3 shadow-lg">
-    <div class="container flex justify-between">
+  <nav class="bg-white rounded-2xl border-2 bordergray-300 mt-6 px-2 py-2 md:px-4 md:py-3 shadow-lg">
+    <div class="flex justify-between">
       <div class="flex">
-        <a href="{% pageurl current_site.root_page %}" class="flex flex-none">
+        <a href="{% pageurl current_site.root_page %}"
+           class="flex items-center justify-center h-full w-[150px]">
           <img src="{% static 'images/logo/turbotailer.svg' %}"
-               alt="Turbotailer Logo"
-               class="w-9/12" />
+               alt="Turbotailer Logo" />
         </a>
         <div class="h-100 bg-gray-300 mx-6 border-[1.5px] hidden lg:block"></div>
         <div class="hidden flex-auto lg:flex lg:items-center lg:justify-center">

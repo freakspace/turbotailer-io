@@ -16,7 +16,7 @@
 <div class="container">
   <h2 class="text-3xl lg:text-6xl font-semibold mb-5 lg:mb-10">{% translate 'Planer' %}</h2>
   <!-- border bg-white rounded-xl shadow-lg -->
-  <div class="mt-6 mb-5 flex border rounded-xl p-2 shadow-lg sticky top-4 z-50 bg-customBeige lg:hidden">
+  <div class="mt-6 mb-5 flex border rounded-xl p-2 shadow-lg sticky top-4 z-50 bg-customBeige md:hidden">
     <div class="nav-item p-3 flex-auto text-center font-semibold border bg-white rounded-xl shadow-lg"
          data-target="plan1">{% translate 'Starter' %}</div>
     <div class="nav-item p-3 flex-auto text-center font-semibold"
@@ -26,16 +26,16 @@
   </div>
   <div class="flex flex-col md:flex-row justify-center">
     <!-- Basic Plan -->
-    <div class="priceplan flex-1 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200"
+    <div class="priceplan flex-1 rounded-t-xl lg:rounded-l-xl lg:rounded-r-none mb-5 md:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] lg:border-r-0 border-slate-200"
          id="plan1">
-      <div class="flex justify-between bg-white px-6 py-4 shadow-lg shadow-black/2 border-b-[1.5px] border-slate-200">
+      <div class="flex justify-between bg-white px-6 py-4 shadow-md shadow-black/5 border-b-[1.5px] border-slate-200">
         <h2 class="text-xl font-semibold">{% translate 'Starter' %}</h2>
         <a class="underline font-semibold"
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <div class="lg:h-64">
-          <p class="text-lg mb-6 lg:h-[100px]">
+        <div class="md:h-80 2xl:h-64">
+          <p class="text-md xl:text-lg mb-6 md:h-[150px] 2xl:h-[100px]">
             {% translate 'Professionel hjemmeside med unikt design inklusive 1 månedligt ændringsønske og sikkerhedsopdateringer' %}
           </p>
           <div class="font-sans text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-xl bg-black px-3 py-2 font-semibold inline-block">
@@ -46,7 +46,7 @@
         </div>
         <hr class="mt-4 mb-3 border border-slate-200" />
         <h3 class="text-xl font-semibold mb-3">{% translate 'Inkluderer' %}</h3>
-        <ul class="mb-6 custom-list-icon lg:h-96">
+        <ul class="mb-6 custom-list-icon md:h-96 text-sm lg:text-md xl:text-[1rem]">
           <li class="mb-3">{% translate 'Skræddersyet design' %}</li>
           <li class="mb-3">{% translate '100% optimeret til mobil' %}</li>
           <li class="mb-3">{% translate 'Brugervenligt CMS' %}</li>
@@ -61,7 +61,7 @@
           <li class="mb-3">{% translate 'DNS & E-mail' %}</li>
         </ul>
         <h3 class="text-xl font-semibold mb-3">{% translate 'Månedligt' %}</h3>
-        <ul class="mb-6 custom-list-icon">
+        <ul class="mb-6 custom-list-icon text-sm lg:text-md xl:text-[1rem]">
           <li class="mb-3">{% translate '1x ændringsønske' %}</li>
           <li class="mb-3">{% translate 'Sikkerhedsopdateringer' %}</li>
           <li class="mb-3">{% translate 'Statistik rapport' %}</li>
@@ -69,7 +69,7 @@
       </div>
     </div>
     <!-- Standard Plan -->
-    <div class="priceplan flex-1 rounded-t-xl lg:rounded-t-none mb-5 lg:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] border-slate-200"
+    <div class="priceplan flex-1 rounded-t-xl lg:rounded-t-none mb-5 md:mb-0 overflow-hidden shadow-lg bg-[#F8F7F4] border-[1.5px] lg:border-r-0 border-slate-200"
          id="plan2">
       <div class="flex justify-between bg-white px-6 py-4 shadow-md shadow-black/5 border-b-[1.5px] border-slate-200">
         <h2 class="text-xl font-semibold">{% translate 'Turbo' %}</h2>
@@ -77,8 +77,8 @@
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <div class="lg:h-64">
-          <p class="text-lg mb-6 lg:h-[100px]">
+        <div class="md:h-80 2xl:h-64">
+          <p class="text-md xl:text-lg mb-6 md:h-[150px] 2xl:h-[100px]">
             {% translate 'Du får alt fra starter men op til 3 månedlige ændringsønsker samt mange valgfrie funktioner som f.eks. betalinger og medarbejderlogin' %}
           </p>
           <div class="text-xl lg:text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
@@ -89,7 +89,7 @@
         </div>
         <hr class="mt-4 mb-3 border border-slate-200" />
         <h3 class="text-xl font-semibold mb-3">{% translate 'Inkluderer' %}</h3>
-        <ul class="mb-6 custom-list-icon lg:h-96">
+        <ul class="mb-6 custom-list-icon md:h-96 text-sm lg:text-md xl:text-[1rem]">
           <li class="mb-3 underline">{% translate 'Alt fra starter' %}</li>
           <li class="mb-3">{% translate 'Kundelogin' %}</li>
           <li class="mb-3">{% translate 'Medarbejderlogin' %}</li>
@@ -99,7 +99,7 @@
           <li class="mb-3">{% translate '+ 3 komponenter (13 i alt)' %}</li>
         </ul>
         <h3 class="text-xl font-semibold mb-3">{% translate 'Månedligt' %}</h3>
-        <ul class="mb-6 custom-list-icon">
+        <ul class="mb-6 custom-list-icon text-sm lg:text-md xl:text-[1rem]">
           <li class="mb-3 underline">{% translate 'Alt fra starter' %}</li>
           <li class="mb-3">{% translate '2x ekstra ændringsønsker' %}</li>
           <li class="mb-3">{% translate '5x indgående links' %}</li>
@@ -116,11 +116,11 @@
            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">{% translate 'Book et møde' %}</a>
       </div>
       <div class="px-6 py-4">
-        <div class="lg:h-64">
-          <p class="text-lg mb-6 lg:h-[100px]">
-            {% translate 'Kontakt os og hør nærmere om mulighederne for at lave en specialtilpasset hjemmeside som ikke passer indenfor de almindelige rammer.' %}
+        <div class="md:h-80 2xl:h-64">
+          <p class="text-md xl:text-lg mb-6 md:h-[150px] 2xl:h-[100px]">
+            {% translate 'Kontakt os og hør nærmere om mulighederne for at lave en specialtilpasset hjemmeside' %}
           </p>
-          <div class="text-2xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
+          <div class="text-xl m-0 mb-6 rounded-xl border-[5px] border-white drop-shadow-lg bg-black px-3 py-2 font-semibold inline-block">
             <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#DDF358] from-10% via-[#FBFE7F] to-[#FCFEA8]">{% translate 'Pris efter aftale' %}</span>
           </div>
         </div>

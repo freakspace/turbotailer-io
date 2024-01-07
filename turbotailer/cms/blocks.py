@@ -20,6 +20,7 @@ from wagtail.images.blocks import ImageChooserBlock
 # TODO Make it possible to define CTA text globally
 # TODO Fix cta button style being required
 # TODO Fjern aws cli hvis muligt
+# TODO Knapper skal være mere simple: CTA, Primary, Secondary
 
 
 class ImageBlock(StructBlock):

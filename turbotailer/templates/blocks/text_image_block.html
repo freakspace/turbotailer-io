@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="flex flex-wrap {% if self.reverse %}flex-row-reverse{% endif %}">
-    <div class="w-full md:w-1/2 px-2 mb-3 lg:mb-0">
+    <div class="w-full md:w-1/2 mb-3 lg:mb-0">
       {% if self.image %}
         {% picture self.image width-600 format-{avif,webp,jpeg} loading="lazy" %}
       {% endif %}
@@ -13,7 +13,7 @@
     <div class="w-full md:w-1/2 flex items-center {% if self.reverse %} justify-start pr-md-5 {% else %} pl-md-5 {% endif %} px-2">
       <div class="md:w-4/5">
         {% if self.subtitle %}<h3 class="text-sm text-gray-600">{{ self.subtitle }}</h3>{% endif %}
-        <h2 class="text-xl lg:text-4xl font-semibold mb-3">{{ self.title }}</h2>
+        <h2 class="text-2xl lg:text-4xl font-semibold mb-3">{{ self.title }}</h2>
         <div class="text-lg">{{ self.text|richtext }}</div>
         {% if self.buttons %}
           <div class="flex flex-col space-y-3 mt-4">

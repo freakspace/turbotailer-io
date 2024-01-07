@@ -2,7 +2,7 @@
 
 <div class="container mb-20 lg:mb-40">
   {% if self.title %}<h2 class="text-3xl lg:text-6xl font-semibold mb-10">{{ self.title }}</h2>{% endif %}
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {% for feature in self.features %}
       {% include_block feature %}
     {% endfor %}

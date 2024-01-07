@@ -17,7 +17,8 @@ module.exports = {
       'placeholder-white',
       'text-white',
       'w-full',
-      'overflow-hidden'
+      'overflow-hidden',
+      'w-9/12'
     ],
     theme: {
       container: {
