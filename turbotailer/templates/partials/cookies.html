@@ -12,14 +12,13 @@
     {% with cookie_groups=cookie_groups|join:", " %}
       <div id="cookieModal">
         <div class="fixed inset-0 flex items-center justify-center p-4 bg-black/50 z-50">
-          <div class="bg-white rounded-lg overflow-hidden shadow-xl max-w-lg w-full">
+          <div class="bg-white rounded-lg shadow-xl max-w-lg w-full">
             <div class="bg-gray-100 px-4 py-2">
-              <p class="text-lg font-semibold">Vi anvender cookies</p>
+              <p class="text-lg font-semibold">{% translate 'Vi anvender cookies' %}</p>
             </div>
-            <div class="space-y-4 p-4">
+            <div class="space-y-4 p-4 overflow-y-scroll max-h-[80vh]">
               <p>
-                Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring.
-                Venligst tilkendegiv hvilke cookies du accepterer
+                {% translate 'Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring. Venligst tilkendegiv hvilke cookies du accepterer' %}
               </p>
               <div class="space-y-3" id="cookieAccordion">
                 {% for group in all_cookies %}
@@ -29,10 +28,10 @@
                       <table class="min-w-full divide-y divide-gray-200">
                         <thead>
                           <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Navn</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Beskrivelse</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sti</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Domæne</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Navn' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Beskrivelse' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Sti' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{translate 'Domæne' }</th>
                           </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
