@@ -1,0 +1,874 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-11 07:27+0000\n"
+"PO-Revision-Date: 2024-01-11 14:49+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#: config/settings/base.py:33
+msgid "Danish"
+msgstr "Dansk"
+
+#: config/settings/base.py:34
+msgid "English"
+msgstr "Engelsk"
+
+#: turbotailer/cms/blocks.py:49
+msgid "Select a header size"
+msgstr "Vælg en overskriftsstørrelse"
+
+#: turbotailer/cms/blocks.py:69
+msgid "e.g. Mary Berry"
+msgstr "F.eks. Mona Lisa"
+
+#: turbotailer/cms/blocks.py:77
+msgid "Button display text"
+msgstr "Knap visningstekst"
+
+#: turbotailer/cms/blocks.py:78 turbotailer/cms/blocks.py:174
+#: turbotailer/cms/blocks.py:196
+msgid "Select an internal page to link to"
+msgstr "Vælg en intern side at linke til"
+
+#: turbotailer/cms/blocks.py:79
+msgid "Link to a anchor on the same page"
+msgstr "Link til et anker på samme side"
+
+#: turbotailer/cms/blocks.py:80
+msgid "Open form modal"
+msgstr "Åbn formularmodal"
+
+#: turbotailer/cms/blocks.py:83
+msgid "Select a style"
+msgstr "Vælg en stil"
+
+#: turbotailer/cms/blocks.py:84 turbotailer/templates/account/email.html:32
+msgid "Primary"
+msgstr "Primær"
+
+#: turbotailer/cms/blocks.py:85
+msgid "Secondary"
+msgstr "Sekundær"
+
+#: turbotailer/cms/blocks.py:94
+msgid "Call to action button"
+msgstr "Opfordring til handling knap"
+
+#: turbotailer/cms/blocks.py:98
+msgid "USP text"
+msgstr "USP-tekst"
+
+#: turbotailer/cms/blocks.py:103
+msgid "Benefit"
+msgstr "Fordele"
+
+#: turbotailer/cms/blocks.py:107 turbotailer/cms/blocks.py:135
+#: turbotailer/cms/blocks.py:172 turbotailer/cms/blocks.py:205
+#: turbotailer/cms/blocks.py:218 turbotailer/cms/blocks.py:263
+#: turbotailer/cms/blocks.py:285 turbotailer/cms/blocks.py:314
+#: turbotailer/cms/blocks.py:322 turbotailer/cms/blocks.py:340
+msgid "Add your title"
+msgstr "Tilføj din titel"
+
+#: turbotailer/cms/blocks.py:108
+msgid "Add your sub title"
+msgstr "Tilføj din undertitel"
+
+#: turbotailer/cms/blocks.py:112
+msgid "Make hero full width"
+msgstr "Gør helten fuld bredde"
+
+#: turbotailer/cms/blocks.py:122
+msgid "Hero Banner"
+msgstr "Hero Banner"
+
+#: turbotailer/cms/blocks.py:126
+msgid "Add background color"
+msgstr "Tilføj baggrundsfarve"
+
+#: turbotailer/cms/blocks.py:131 turbotailer/cms/blocks.py:397
+msgid "Empty Space"
+msgstr "Tomt Rum"
+
+#: turbotailer/cms/blocks.py:136
+msgid "Add your content"
+msgstr "Tilføj dit indhold"
+
+#: turbotailer/cms/blocks.py:141
+msgid "Accordion Item"
+msgstr "Akkordeon Element"
+
+#: turbotailer/cms/blocks.py:150
+msgid "Accordion"
+msgstr "Harmonika"
+
+#: turbotailer/cms/blocks.py:154
+msgid "Maximum number of reviews to display"
+msgstr "Maksimalt antal anmeldelser til visning"
+
+#: turbotailer/cms/blocks.py:179
+msgid "Services item"
+msgstr "Tjenesteelement"
+
+#: turbotailer/cms/blocks.py:189 turbotailer/cms/blocks.py:194
+#: turbotailer/cms/blocks.py:388
+msgid "Services"
+msgstr "Tjenester"
+
+#: turbotailer/cms/blocks.py:201
+msgid "Cases item"
+msgstr "Fremvisnings element"
+
+#: turbotailer/cms/blocks.py:206 turbotailer/cms/blocks.py:284
+msgid "Add your subtitle"
+msgstr "Tilføj din undertekst"
+
+#: turbotailer/cms/blocks.py:207 turbotailer/cms/blocks.py:219
+#: turbotailer/cms/blocks.py:241
+msgid "Add your description"
+msgstr "Tilføj din beskrivelse"
+
+#: turbotailer/cms/blocks.py:213 turbotailer/cms/blocks.py:389
+msgid "Cases"
+msgstr "Fremvisninger"
+
+#: turbotailer/cms/blocks.py:225
+msgid "Feature"
+msgstr "Funktion"
+
+#: turbotailer/cms/blocks.py:235 turbotailer/cms/blocks.py:240
+#: turbotailer/cms/blocks.py:390
+msgid "Features"
+msgstr "Funktioner"
+
+#: turbotailer/cms/blocks.py:244
+msgid "Align the image to the right"
+msgstr "Juster billedet til højre"
+
+#: turbotailer/cms/blocks.py:247
+msgid "Select a col-span"
+msgstr "Vælg en col-span"
+
+#: turbotailer/cms/blocks.py:254
+msgid "Give a special 'premium' badge"
+msgstr "Giv en speciel 'premium' badge"
+
+#: turbotailer/cms/blocks.py:259
+msgid "Item"
+msgstr "Vare"
+
+#: turbotailer/cms/blocks.py:269 turbotailer/cms/blocks.py:391
+msgid "Masonry"
+msgstr "Tegl"
+
+#: turbotailer/cms/blocks.py:279 turbotailer/cms/blocks.py:396
+msgid "Anchor"
+msgstr "Anker"
+
+#: turbotailer/cms/blocks.py:286 turbotailer/cms/blocks.py:323
+msgid "Add your text"
+msgstr "Tilføj din tekst"
+
+#: turbotailer/cms/blocks.py:290
+msgid "Insert an embed URL e.g https://www.youtube.com/watch?v=SGJFWirQ3ks"
+msgstr ""
+"Indsæt en indlejret URL f.eks https://www.youtube.com/watch?v=SGJFWirQ3ks"
+
+#: turbotailer/cms/blocks.py:296
+msgid "Reverse the order of text and image"
+msgstr "Omvend rækkefølgen af tekst og billede"
+
+#: turbotailer/cms/blocks.py:301 turbotailer/cms/blocks.py:392
+msgid "Text & Image"
+msgstr "Tekst & Billede"
+
+#: turbotailer/cms/blocks.py:310 turbotailer/cms/blocks.py:393
+msgid "Text & Image Repeater"
+msgstr "Tekst & Billede Gentager"
+
+#: turbotailer/cms/blocks.py:329 turbotailer/cms/blocks.py:394
+msgid "List with pages"
+msgstr "Liste med sider"
+
+#: turbotailer/cms/blocks.py:336
+msgid "Audit form"
+msgstr "Audit form"
+
+#: turbotailer/cms/blocks.py:346
+msgid "Highlight something"
+msgstr "Fremhæv noget"
+
+#: turbotailer/cms/blocks.py:371 turbotailer/cms/blocks.py:399
+msgid "Price table"
+msgstr "Pris tabel"
+
+#: turbotailer/cms/blocks.py:385
+msgid "FAQ (Accordion)"
+msgstr "FAQ (Akkordeon)"
+
+#: turbotailer/cms/blocks.py:386
+msgid "Hero"
+msgstr "Hero"
+
+#: turbotailer/cms/blocks.py:387
+msgid "Reviews"
+msgstr "Anmeldelser"
+
+#: turbotailer/cms/blocks.py:395
+msgid "Highlight"
+msgstr "Fremhæv"
+
+#: turbotailer/cms/blocks.py:398
+msgid "Audit Form"
+msgstr "Audit Form"
+
+#: turbotailer/cms/wagtail_hooks.py:35
+msgid "Clear cache"
+msgstr "Ryd cache"
+
+#: turbotailer/core/forms.py:17 turbotailer/core/models.py:8
+msgid "Navn"
+msgstr "Navn"
+
+#: turbotailer/core/forms.py:21 turbotailer/core/models.py:9
+msgid "Hjemmeside"
+msgstr "Hjemmeside"
+
+#: turbotailer/core/forms.py:25
+msgid "Email"
+msgstr "E-mail"
+
+#: turbotailer/core/models.py:10
+msgid "E-mail"
+msgstr "E-mail"
+
+#: turbotailer/core/models.py:14
+msgid "Video link"
+msgstr "Videolink"
+
+#: turbotailer/core/views.py:22
+msgid "Tak! Du vil blive kontaktet snarest"
+msgstr "Tak! Du vil blive kontaktet hurtigst muligt."
+
+#: turbotailer/templates/account/account_inactive.html:6
+#: turbotailer/templates/account/account_inactive.html:9
+msgid "Account Inactive"
+msgstr "Konto inaktiv"
+
+#: turbotailer/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Denne konto er inaktiv."
+
+#: turbotailer/templates/account/email.html:7
+msgid "Account"
+msgstr "Konto"
+
+#: turbotailer/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr "E-mailadresser"
+
+#: turbotailer/templates/account/email.html:12
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Følgende e-mailadresser er forbundet med din konto:"
+
+#: turbotailer/templates/account/email.html:27
+msgid "Verified"
+msgstr "Bekræftet"
+
+#: turbotailer/templates/account/email.html:29
+msgid "Unverified"
+msgstr "Ubekræftet"
+
+#: turbotailer/templates/account/email.html:40
+msgid "Make Primary"
+msgstr "Gør Primær"
+
+#: turbotailer/templates/account/email.html:43
+msgid "Re-send Verification"
+msgstr "Gensend verifikation"
+
+#: turbotailer/templates/account/email.html:46
+msgid "Remove"
+msgstr "Fjern"
+
+#: turbotailer/templates/account/email.html:52
+msgid "Warning:"
+msgstr "Advarsel:"
+
+#: turbotailer/templates/account/email.html:52
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, "
+"etc."
+msgstr ""
+"Du har i øjeblikket ikke opsat nogen e-mailadresse. Du bør virkelig tilføje "
+"en e-mailadresse, så du kan modtage meddelelser, nulstille din adgangskode "
+"osv."
+
+#: turbotailer/templates/account/email.html:55
+msgid "Add E-mail Address"
+msgstr "Tilføj E-mail Adresse"
+
+#: turbotailer/templates/account/email.html:59
+msgid "Add E-mail"
+msgstr "Tilføj E-mail"
+
+#: turbotailer/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Vil du virkelig fjerne den valgte e-mail-adresse?"
+
+#: turbotailer/templates/account/email_confirm.html:7
+#: turbotailer/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Bekræft e-mailadresse"
+
+#: turbotailer/templates/account/email_confirm.html:14
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Bekræft venligst at <a href=\"mailto:%(email)s\">%(email)s</a> er en e-mail "
+"adresse for bruger %(user_display)s."
+
+#: turbotailer/templates/account/email_confirm.html:19
+msgid "Confirm"
+msgstr "Bekræft"
+
+#: turbotailer/templates/account/email_confirm.html:24
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Denne e-mail bekræftelseslink er udløbet eller er ugyldig. Venligst <a "
+"href=\"%(email_url)s\">udsted en ny e-mail bekræftelsesanmodning</a>."
+
+#: turbotailer/templates/account/login.html:8
+#: turbotailer/templates/account/login.html:11
+#: turbotailer/templates/account/login.html:50
+msgid "Sign In"
+msgstr "Log Ind"
+
+#: turbotailer/templates/account/login.html:15
+msgid "Please sign in with one of your existing third party accounts:"
+msgstr "Log venligst ind med en af dine eksisterende tredjepartskonti:"
+
+#: turbotailer/templates/account/login.html:17
+#, python-format
+msgid ""
+"Or, <a href=\"%(signup_url)s\">sign up</a> for a %(site_name)s account and "
+"sign in below:"
+msgstr ""
+"Eller, <a href=\"%(signup_url)s\">tilmeld dig</a> en %(site_name)s konto og "
+"log ind nedenfor:"
+
+#: turbotailer/templates/account/login.html:27
+msgid "or"
+msgstr "eller"
+
+#: turbotailer/templates/account/login.html:33
+#, python-format
+msgid ""
+"If you have not created an account yet, then please <a "
+"href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Hvis du endnu ikke har oprettet en konto, så vær venlig at <a "
+"href=\"%(signup_url)s\">registrere dig</a> først."
+
+#: turbotailer/templates/account/login.html:49
+msgid "Forgot Password?"
+msgstr "Glemt adgangskode?"
+
+#: turbotailer/templates/account/logout.html:6
+#: turbotailer/templates/account/logout.html:9
+#: turbotailer/templates/account/logout.html:18
+msgid "Sign Out"
+msgstr "Log ud"
+
+#: turbotailer/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Er du sikker på, at du vil logge ud?"
+
+#: turbotailer/templates/account/password_change.html:7
+#: turbotailer/templates/account/password_change.html:10
+#: turbotailer/templates/account/password_change.html:16
+#: turbotailer/templates/account/password_reset_from_key.html:7
+#: turbotailer/templates/account/password_reset_from_key.html:14
+#: turbotailer/templates/account/password_reset_from_key_done.html:6
+#: turbotailer/templates/account/password_reset_from_key_done.html:9
+msgid "Change Password"
+msgstr "Skift adgangskode"
+
+#: turbotailer/templates/account/password_reset.html:8
+#: turbotailer/templates/account/password_reset.html:11
+#: turbotailer/templates/account/password_reset_done.html:7
+#: turbotailer/templates/account/password_reset_done.html:10
+msgid "Password Reset"
+msgstr "Nulstil adgangskode"
+
+#: turbotailer/templates/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send "
+"you an e-mail allowing you to reset it."
+msgstr ""
+"Glemt din adgangskode? Indtast din e-mailadresse nedenfor, og vi vil sende "
+"dig en e-mail, der giver dig mulighed for at nulstille den."
+
+#: turbotailer/templates/account/password_reset.html:25
+msgid "Reset My Password"
+msgstr "Nulstil Min Adgangskode"
+
+#: turbotailer/templates/account/password_reset.html:27
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+"Kontakt os venligst, hvis du har problemer med at nulstille dit kodeord."
+
+#: turbotailer/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Vi har sendt dig en e-mail. Kontakt os venligst, hvis du ikke modtager den "
+"inden for få minutter."
+
+#: turbotailer/templates/account/password_reset_from_key.html:12
+msgid "Bad Token"
+msgstr "Dårligt Token"
+
+#: turbotailer/templates/account/password_reset_from_key.html:20
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
+msgstr ""
+"Adgangskode nulstillingslinket var ugyldigt, muligvis fordi det allerede er "
+"blevet brugt. Venligst anmod om en <a href=\"%(passwd_reset_url)s\">ny "
+"adgangskode nulstilling</a>."
+
+#: turbotailer/templates/account/password_reset_from_key.html:30
+msgid "change password"
+msgstr "ændre adgangskode"
+
+#: turbotailer/templates/account/password_reset_from_key.html:33
+#: turbotailer/templates/account/password_reset_from_key_done.html:10
+msgid "Your password is now changed."
+msgstr "Din adgangskode er nu ændret."
+
+#: turbotailer/templates/account/password_set.html:7
+#: turbotailer/templates/account/password_set.html:10
+#: turbotailer/templates/account/password_set.html:19
+msgid "Set Password"
+msgstr "Angiv adgangskode"
+
+#: turbotailer/templates/account/signup.html:7
+msgid "Signup"
+msgstr "Tilmelding"
+
+#: turbotailer/templates/account/signup.html:10
+#: turbotailer/templates/account/signup.html:25
+msgid "Sign Up"
+msgstr "Tilmeld dig"
+
+#: turbotailer/templates/account/signup.html:12
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"Har du allerede en konto? Så venligst <a href=\"%(login_url)s\">log ind</a>."
+
+#: turbotailer/templates/account/signup_closed.html:6
+#: turbotailer/templates/account/signup_closed.html:9
+msgid "Sign Up Closed"
+msgstr "Tilmelding Lukket"
+
+#: turbotailer/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Vi beklager, men tilmeldingen er i øjeblikket lukket."
+
+#: turbotailer/templates/account/verification_sent.html:6
+#: turbotailer/templates/account/verification_sent.html:9
+#: turbotailer/templates/account/verified_email_required.html:6
+#: turbotailer/templates/account/verified_email_required.html:9
+msgid "Verify Your E-mail Address"
+msgstr "Bekræft din e-mailadresse"
+
+#: turbotailer/templates/account/verification_sent.html:11
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Vi har sendt en e-mail til dig til verifikation. Følg linket der er angivet "
+"for at afslutte tilmeldingsprocessen. Kontakt os venligst, hvis du ikke "
+"modtager den inden for et par minutter."
+
+#: turbotailer/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Denne del af siden kræver, at vi verificerer, at du er den person du "
+"udgiver dig for at være. Til dette formål kræver vi, at du verificerer "
+"ejerskabet af din email-adresse. "
+
+#: turbotailer/templates/account/verified_email_required.html:17
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Vi har sendt en e-mail til dig til verifikation. Klik venligst på linket "
+"inde i denne e-mail. Kontakt os venligst, hvis du ikke modtager den inden "
+"for nogle minutter."
+
+#: turbotailer/templates/account/verified_email_required.html:22
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
+"e-mail address</a>."
+msgstr ""
+"<strong>Bemærk:</strong> du kan stadig <a href=\"%(email_url)s\">ændre din "
+"e-mailadresse</a>."
+
+#: turbotailer/templates/blocks/audit_form.html:9
+msgid "Get a free report"
+msgstr "Få en gratis rapport"
+
+#: turbotailer/templates/blocks/audit_form.html:12
+msgid "Do you have an existing website? Get a FREE audit by Emil."
+msgstr "Har du en eksisterende hjemmeside? Få en GRATIS gennemgang af Emil."
+
+#: turbotailer/templates/blocks/masonry_item_block.html:12
+#: turbotailer/templates/blocks/price_table_block.html:23
+#: turbotailer/templates/blocks/price_table_block.html:75
+msgid "Turbo"
+msgstr "Turbo"
+
+#: turbotailer/templates/blocks/price_table_block.html:17
+msgid "Plans"
+msgstr "Planer"
+
+#: turbotailer/templates/blocks/price_table_block.html:21
+#: turbotailer/templates/blocks/price_table_block.html:32
+msgid "Starter"
+msgstr "Starter"
+
+#: turbotailer/templates/blocks/price_table_block.html:25
+#: turbotailer/templates/blocks/price_table_block.html:114
+msgid "Custom"
+msgstr "Specialtilpasset"
+
+#: turbotailer/templates/blocks/price_table_block.html:34
+#: turbotailer/templates/blocks/price_table_block.html:77
+#: turbotailer/templates/blocks/price_table_block.html:116
+#: turbotailer/templates/blocks/price_table_block.html:135
+#: turbotailer/templates/includes/header.html:41
+#: turbotailer/templates/includes/header.html:52
+msgid "Book a call"
+msgstr "Book et møde"
+
+#: turbotailer/templates/blocks/price_table_block.html:39
+msgid ""
+"Professional website with unique design including 1 monthly change request "
+"and security updates"
+msgstr ""
+"Professionel hjemmeside med unikt design, inklusive 1 månedlig "
+"ændringsanmodning og sikkerhedsopdateringer"
+
+#: turbotailer/templates/blocks/price_table_block.html:44
+#: turbotailer/templates/blocks/price_table_block.html:87
+msgid "Excl. vat"
+msgstr "Ekskl. moms"
+
+#: turbotailer/templates/blocks/price_table_block.html:45
+#: turbotailer/templates/blocks/price_table_block.html:88
+msgid "Cancel anytime"
+msgstr "Uden binding"
+
+#: turbotailer/templates/blocks/price_table_block.html:48
+#: turbotailer/templates/blocks/price_table_block.html:91
+msgid "Includes"
+msgstr "Inkluderer"
+
+#: turbotailer/templates/blocks/price_table_block.html:50
+msgid "Custom design"
+msgstr "Skræddersyet design"
+
+#: turbotailer/templates/blocks/price_table_block.html:51
+#, python-format
+msgid "100%% optimzed for mobile"
+msgstr "100%% optimeret til mobil"
+
+#: turbotailer/templates/blocks/price_table_block.html:52
+msgid "Userfriendly CMS"
+msgstr "Brugervenligt CMS"
+
+#: turbotailer/templates/blocks/price_table_block.html:53
+msgid "Min. 90 performance"
+msgstr "Min. 90 i performance"
+
+#: turbotailer/templates/blocks/price_table_block.html:54
+msgid "Up to 8 pages"
+msgstr "Op til 8 sider"
+
+#: turbotailer/templates/blocks/price_table_block.html:55
+msgid "10 components"
+msgstr "10 komponenter"
+
+#: turbotailer/templates/blocks/price_table_block.html:56
+msgid "GDPR cookie-settings"
+msgstr "GDPR cookie-indstillinger"
+
+#: turbotailer/templates/blocks/price_table_block.html:57
+msgid "Hosting"
+msgstr "Hosting"
+
+#: turbotailer/templates/blocks/price_table_block.html:58
+msgid "Cloudfront CDN"
+msgstr "Cloudfront CDN"
+
+#: turbotailer/templates/blocks/price_table_block.html:59
+msgid "SSL Certificate"
+msgstr "SSL-certifikat"
+
+#: turbotailer/templates/blocks/price_table_block.html:60
+msgid "Statistics & Tracking"
+msgstr "Statistik & Tracking"
+
+#: turbotailer/templates/blocks/price_table_block.html:61
+msgid "DNS & E-mail"
+msgstr "DNS & E-mail"
+
+#: turbotailer/templates/blocks/price_table_block.html:63
+#: turbotailer/templates/blocks/price_table_block.html:101
+msgid "Monthly"
+msgstr "Månedlig"
+
+#: turbotailer/templates/blocks/price_table_block.html:65
+msgid "1x change request"
+msgstr "1x ændringsanmodning"
+
+#: turbotailer/templates/blocks/price_table_block.html:66
+msgid "Security updates"
+msgstr "Sikkerhedsopdateringer"
+
+#: turbotailer/templates/blocks/price_table_block.html:67
+msgid "Lead report"
+msgstr "Kontakt rapport"
+
+#: turbotailer/templates/blocks/price_table_block.html:82
+msgid ""
+"Everything from starter plus two extra monthly change requests and optional "
+"features such as payments and employee login"
+msgstr ""
+"Alt fra startpakken plus to ekstra månedlige ændringsanmodninger og "
+"valgfrie funktioner som betalinger og medarbejderlogin"
+
+#: turbotailer/templates/blocks/price_table_block.html:93
+#: turbotailer/templates/blocks/price_table_block.html:103
+msgid "Everything from starter"
+msgstr "Alt fra Starter"
+
+#: turbotailer/templates/blocks/price_table_block.html:94
+msgid "Customer login"
+msgstr "Kunde login"
+
+#: turbotailer/templates/blocks/price_table_block.html:95
+msgid "Employee login"
+msgstr "Medarbejder login"
+
+#: turbotailer/templates/blocks/price_table_block.html:96
+msgid "Payments"
+msgstr "Betalinger"
+
+#: turbotailer/templates/blocks/price_table_block.html:97
+msgid "Multilangual"
+msgstr "Flersproget"
+
+#: turbotailer/templates/blocks/price_table_block.html:98
+msgid "+ 8 pages (16 in total)"
+msgstr "+ 8 sider (16 i alt)"
+
+#: turbotailer/templates/blocks/price_table_block.html:99
+msgid "+ 3 components (13 in total)"
+msgstr "+ 3 komponenter (13 i alt)"
+
+#: turbotailer/templates/blocks/price_table_block.html:104
+msgid "2x extra change requests"
+msgstr "2x ekstra ændringsanmodninger"
+
+#: turbotailer/templates/blocks/price_table_block.html:105
+msgid "5x inbound links"
+msgstr "5x indgående links"
+
+#: turbotailer/templates/blocks/price_table_block.html:106
+msgid "3x SEO articles"
+msgstr "3x SEO artikler"
+
+#: turbotailer/templates/blocks/price_table_block.html:121
+msgid ""
+"Contact me today and hear more about all the options for a customized "
+"website."
+msgstr ""
+"Kontakt mig i dag og hør mere om alle mulighederne for en skræddersyet "
+"hjemmeside."
+
+#: turbotailer/templates/blocks/price_table_block.html:124
+msgid "Price by agreement"
+msgstr "Pris efter aftale"
+
+#: turbotailer/templates/blocks/price_table_block.html:128
+msgid "Have a talk with Emil"
+msgstr "Få en snak med Emil"
+
+#: turbotailer/templates/blocks/reviews/review_block_desktop.html:11
+#: turbotailer/templates/blocks/reviews/review_block_mobile.html:8
+msgid "Good"
+msgstr "God"
+
+#: turbotailer/templates/blocks/reviews/review_block_desktop.html:13
+#: turbotailer/templates/blocks/reviews/review_block_mobile.html:10
+msgid "Excellent"
+msgstr "Fremragende"
+
+#: turbotailer/templates/blocks/reviews/review_block_desktop.html:15
+#: turbotailer/templates/blocks/reviews/review_block_mobile.html:12
+msgid "Perfect"
+msgstr "Perfekt"
+
+#: turbotailer/templates/blocks/reviews/review_block_desktop.html:17
+#: turbotailer/templates/blocks/reviews/review_block_mobile.html:14
+msgid "Ok"
+msgstr "Ok"
+
+#: turbotailer/templates/blocks/reviews/review_block_desktop.html:34
+#: turbotailer/templates/blocks/reviews/review_block_mobile.html:31
+#, python-format
+msgid "Based on %(reviews_count)s reviews"
+msgstr "Baseret på %(reviews_count)s anmeldelser"
+
+#: turbotailer/templates/blocks/services_block.html:8
+msgid "Our services"
+msgstr "Vores tjenester"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:10
+msgid "Accepted"
+msgstr "Accepteret"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:18
+msgid "Accept"
+msgstr "Accepter"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:22
+msgid "Rejected"
+msgstr "Afvist"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:28
+msgid "Reject"
+msgstr "Afvis"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:38
+#: turbotailer/templates/partials/cookies.html:29
+msgid "Name"
+msgstr "Navn"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:39
+#: turbotailer/templates/partials/cookies.html:30
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:40
+#: turbotailer/templates/partials/cookies.html:31
+msgid "Path"
+msgstr "Sti"
+
+#: turbotailer/templates/cookie_consent/_cookie_group.html:41
+#: turbotailer/templates/partials/cookies.html:32
+msgid "Domain"
+msgstr "Domæne"
+
+#: turbotailer/templates/cookie_consent/cookiegroup_list.html:8
+msgid "Cookie settings"
+msgstr "Cookie-indstillinger"
+
+#: turbotailer/templates/cookie_consent/cookiegroup_list.html:9
+msgid ""
+"This is a list of all cookies and corresponding categories on this website"
+msgstr ""
+"Dette er en liste over alle cookies og tilsvarende kategorier på dette "
+"websted"
+
+#: turbotailer/templates/core/includes/audit_form.html:28
+msgid "Send"
+msgstr "Send"
+
+#: turbotailer/templates/includes/footer.html:32
+msgid "Cookieindstillinger"
+msgstr "Cookieindstillinger"
+
+#: turbotailer/templates/partials/cookies.html:17
+msgid "We use cookies"
+msgstr "Vi bruger cookies"
+
+#: turbotailer/templates/partials/cookies.html:19
+msgid ""
+"This website uses cookies to optimize performance and analyse user "
+"behavior. Please select which cookies you want to accept."
+msgstr ""
+"Dette websted bruger cookies til at optimere ydelsen og analysere "
+"brugeradfærd. Vælg venligst, hvilke cookies du vil acceptere."
+
+#: turbotailer/templates/partials/cookies.html:53
+msgid "Accept all"
+msgstr "Accepter alle"
+
+#: turbotailer/templates/partials/cookies.html:57
+msgid "Only required"
+msgstr "Kun påkrævet"
+
+#: turbotailer/users/admin.py:23
+msgid "Personal info"
+msgstr "Personlige oplysninger"
+
+#: turbotailer/users/admin.py:25
+msgid "Permissions"
+msgstr "Tilladelser"
+
+#: turbotailer/users/admin.py:36
+msgid "Important dates"
+msgstr "Vigtige datoer"
+
+#: turbotailer/users/apps.py:7
+msgid "Users"
+msgstr "Brugere"
+
+#: turbotailer/users/forms.py:28 turbotailer/users/tests/test_forms.py:36
+msgid "This email has already been taken."
+msgstr "Denne e-mail er allerede taget."
+
+#: turbotailer/users/models.py:17
+msgid "Name of User"
+msgstr "Brugernavn"
+
+#: turbotailer/users/models.py:20
+msgid "email address"
+msgstr "e-mail adresse"
+
+#: turbotailer/users/tests/test_views.py:67 turbotailer/users/views.py:23
+msgid "Information successfully updated"
+msgstr "Informationen blev opdateret succesfuldt"

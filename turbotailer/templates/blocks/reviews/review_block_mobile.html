@@ -5,13 +5,13 @@
     <div class="text-center mb-3">
       <h2 class="text-success mb-0 fst-italic mt-2">
         {% if average_rating > 3.7|to_float %}
-          {% translate 'Godt' %}
+          {% translate 'Good' %}
         {% elif average_rating > 4|to_float %}
-          {% translate 'Fremragende' %}
+          {% translate 'Excellent' %}
         {% elif average_rating > 4.5|to_float %}
-          {% translate 'Perfekt' %}
+          {% translate 'Perfect' %}
         {% else %}
-          {% translate 'Fint' %}
+          {% translate 'Ok' %}
         {% endif %}
       </h2>
       <div class="d-flex justify-content-center">
@@ -28,7 +28,7 @@
         {% endfor %}
       </div>
       <p class="text-muted mb-0 fst-italic mt-2">
-        {% blocktranslate with reviews_count=reviews_count %}Baseret på {{reviews_count}} anmeldelser{% endblocktranslate %}
+        {% blocktranslate with reviews_count=reviews_count %}Based on {{reviews_count}} reviews{% endblocktranslate %}
       </p>
     </div>
     <div id="reviewCarouselMobile"

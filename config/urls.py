@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -18,11 +19,9 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("cookies/", include("cookie_consent.urls")),
     # For anything not caught by a more specific rule above, hand over to
-    # Wagtail's serving mechanism
-    path("", include(wagtail_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
+urlpatterns += i18n_patterns(path("", include(wagtail_urls)), prefix_default_language=False)
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.

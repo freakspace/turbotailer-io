@@ -14,9 +14,9 @@
         <div class="fixed inset-0 flex items-center justify-center p-4 bg-black/50 z-50">
           <div class="bg-white shadow-xl max-w-6xl w-full rounded-xl">
             <div class="space-y-4 p-5 overflow-y-scroll max-h-[90vh] lg:max-h-[80vh]">
-              <p class="text-xl font-semibold">{% translate 'Vi anvender cookies' %}</p>
+              <p class="text-xl font-semibold">{% translate 'We use cookies' %}</p>
               <p>
-                {% translate 'Denne hjemmeside anvender cookies for bedre performance, brugeradfærdig samt markedsføring. Venligst tilkendegiv hvilke cookies du accepterer' %}
+                {% translate 'This website uses cookies to optimize performance and analyse user behavior. Please select which cookies you want to accept.' %}
               </p>
               <div class="space-y-3" id="cookieAccordion">
                 {% for group in all_cookies %}
@@ -26,10 +26,10 @@
                       <table class="min-w-full divide-y divide-gray-200">
                         <thead>
                           <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Navn' %}</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Beskrivelse' %}</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Sti' %}</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Domæne' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Name' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Description' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Path' %}</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">{% translate 'Domain' %}</th>
                           </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -50,13 +50,12 @@
               <div class="flex space-x-2">
                 <button type="button"
                         class="cookie-consent__accept px-4 py-2 font-semibold bg-black text-white rounded-full flex-grow">
-                  {% translate 'Accepter alle' %}
+                  {% translate 'Accept all' %}
                 </button>
                 <button type="button"
                         class="cookie-consent__decline px-4 py-2 font-semibold text-black rounded-full border-2 border-black flex-grow">
-                  {% translate 'Kun nødvendige' %}
+                  {% translate 'Only required' %}
                 </button>
-                <!-- <a href="{{ url_cookies }}" class="inline-flex items-center">{% translate 'Indstillinger' %}</a> -->
               </div>
             </div>
           </div>

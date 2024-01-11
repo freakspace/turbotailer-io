@@ -1,10 +1,12 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.http import HttpResponseForbidden
-from wagtail.admin.panels import FieldPanel, PublishingPanel
+from modelcluster.fields import ParentalKey
+from wagtail.admin.panels import FieldPanel, PageChooserPanel, PublishingPanel
 from wagtail.fields import RichTextField, StreamField
 from wagtail.models import DraftStateMixin, Page, PreviewableMixin, RevisionMixin, Site
 from wagtail.snippets.models import register_snippet
+from wagtailmenus.models import AbstractMainMenuItem
 
 from .blocks import BaseStreamBlock, FooterColumnBlock
 from .forms import StandardPageForm
@@ -114,3 +116,27 @@ class Review(models.Model):
 
     def __str__(self):
         return self.title if self.title else self.content[:29]
+
+
+class CustomMainMenuItem(AbstractMainMenuItem):
+    """A custom menu item model to be used by ``wagtailmenus.MainMenu``"""
+
+    menu = ParentalKey(
+        "wagtailmenus.MainMenu",
+        on_delete=models.CASCADE,
+        related_name="custom_menu_items",  # important for step 3!
+    )
+    title_en = models.CharField(max_length=32, verbose_name="English Title")
+    title_da = models.CharField(max_length=32, verbose_name="Danish Title")
+
+    # Also override the panels attribute, so that the new fields appear
+    # in the admin interface
+    panels = (
+        PageChooserPanel("link_page"),
+        FieldPanel("link_url"),
+        FieldPanel("url_append"),
+        FieldPanel("link_text"),
+        FieldPanel("title_en"),
+        FieldPanel("title_da"),
+        FieldPanel("allow_subnav"),
+    )

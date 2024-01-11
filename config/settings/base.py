@@ -26,17 +26,18 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # In Windows, this must be set to your system time zone.
 TIME_ZONE = "UTC"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "da-dk"
+LANGUAGE_CODE = "da"
 # https://docs.djangoproject.com/en/dev/ref/settings/#languages
 # from django.utils.translation import gettext_lazy as _
-LANGUAGES = [
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("da", _("Danish")),
     ("en", _("English")),
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
 SITE_ID = 1
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
-USE_I18N = False
+USE_I18N = True
+WAGTAIL_I18N_ENABLED = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
@@ -72,6 +73,8 @@ DJANGO_APPS = [
     "wagtail.search",
     "wagtail.contrib.modeladmin",
     "wagtail.admin",
+    "wagtail.locales",
+    "wagtail.contrib.simple_translation",
     "wagtail",
     "taggit",
     "modelcluster",
@@ -359,3 +362,5 @@ WAGTAILIMAGES_WEBP_QUALITY = 55
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 
 LIVE_RELOAD = False
+
+WAGTAILMENUS_MAIN_MENU_ITEMS_RELATED_NAME = "custom_menu_items"

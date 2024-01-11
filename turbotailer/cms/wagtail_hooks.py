@@ -32,7 +32,7 @@ class SiteSettingsAdmin(ModelAdmin):
 @hooks.register("register_settings_menu_item")
 def register_clear_cache_menu_item():
     return MenuItem(
-        _("Clear Cache"),
+        _("Clear cache"),
         reverse("cms:clear_cache"),
         classnames="icon icon-cog",
         order=1000,

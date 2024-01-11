@@ -7,7 +7,7 @@
     {% if not cookie_group.is_required %}
       <div class="cookie-group-form">
         {% if request|cookie_group_accepted:cookie_group.varname %}
-          <span class="cookie-consent-accepted badge rounded-pill text-bg-success py-1 px-2 d-inline-block mb-3">{% trans "Godkendt" %}</span>
+          <span class="cookie-consent-accepted badge rounded-pill text-bg-success py-1 px-2 d-inline-block mb-3">{% trans "Accepted" %}</span>
         {% else %}
           <form class="cookie-consent-accept"
                 action="{% url "cookie_consent_accept" cookie_group.varname %}"
@@ -15,17 +15,19 @@
             {% csrf_token %}
             <input type="submit"
                    class="btn btn-primary"
-                   value="{% translate "Accepter" %}" />
+                   value="{% translate "Accept" %}" />
           </form>
         {% endif %}
         {% if request|cookie_group_declined:cookie_group.varname %}
-          <span class="cookie-consent-declined badge rounded-pill text-bg-danger py-1 px-2 d-inline-block mb-3">{% trans "Afvist" %}</span>
+          <span class="cookie-consent-declined badge rounded-pill text-bg-danger py-1 px-2 d-inline-block mb-3">{% trans "Rejected" %}</span>
         {% else %}
           <form class="cookie-consent-decline"
                 action="{% url "cookie_consent_decline" cookie_group.varname %}"
                 method="post">
             {% csrf_token %}
-            <input type="submit" class="btn btn-primary" value="{% translate "Afvis" %}" />
+            <input type="submit"
+                   class="btn btn-primary"
+                   value="{% translate "Reject" %}" />
           </form>
         {% endif %}
       </div>
@@ -35,10 +37,10 @@
   <table class="table table-sm table-bordered">
     <thead>
       <tr>
-        <th>Navn</th>
-        <th>Beskrivelse</th>
-        <th>Sti</th>
-        <th>Domæne</th>
+        <th>{% translate 'Name' %}</th>
+        <th>{% translate 'Description' %}</th>
+        <th>{% translate 'Path' %}</th>
+        <th>{% translate 'Domain' %}</th>
       </tr>
     </thead>
     <tbody>

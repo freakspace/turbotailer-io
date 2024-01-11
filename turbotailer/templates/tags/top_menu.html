@@ -1,5 +1,6 @@
 {% load menu_tags i18n %}
 
+{% get_current_language as LANGUAGE_CODE %}
 {% for menuitem in menu_items %}
   <li class="{% if menuitem.active %}font-semibold{% else %}font-medium{% endif %} flex items-center sm:mr-8 py-2 sm:py-0 {% if not forloop.last %}border-b-2 sm:border-0{% endif %}">
     {% if menuitem.has_children_in_menu %}
@@ -19,14 +20,30 @@
           <!-- Parent Item as the First Item in Dropdown -->
           <li>
             <a class="block px-4 py-2 font-medium text-gray-700 hover:bg-gray-100"
-               href="{{ menuitem.href }}">{{ menuitem.text }}</a>
+               href="{{ menuitem.href }}">
+              {% if LANGUAGE_CODE == 'da' %}
+                {{ menuitem.title_da }}
+              {% elif LANGUAGE_CODE == 'en' %}
+                {{ menuitem.title_en }}
+              {% else %}
+                {{ menuitem.text }}
+              {% endif %}
+            </a>
           </li>
           <!-- Child Items -->
           <!-- Remember to add childs -->
         </ul>
       </div>
     {% else %}
-      <a href="{{ menuitem.href }}" class="text-black hover:text-gray-800">{{ menuitem.text }}</a>
+      <a href="{{ menuitem.href }}" class="text-black hover:text-gray-800">
+        {% if LANGUAGE_CODE == 'da' %}
+          {{ menuitem.title_da }}
+        {% elif LANGUAGE_CODE == 'en' %}
+          {{ menuitem.title_en }}
+        {% else %}
+          {{ menuitem.text }}
+        {% endif %}
+      </a>
     {% endif %}
   </li>
 {% endfor %}

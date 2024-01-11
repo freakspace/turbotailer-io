@@ -4,25 +4,25 @@
   {% if self.page_link %}
     <button href="{{ self.page_link.url }}"
             type="button"
-            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}">
+            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black bg-white{% endif %}">
       {{ self.title }}
     </button>
   {% elif self.anchor %}
     <a href="#{{ self.anchor }}"
        type="button"
-       class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}">
+       class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black bg-white{% endif %}">
       {{ self.title }}
     </a>
   {% elif self.open_modal %}
     <button type="button"
-            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black{% endif %}"
+            class="text-md font-semibold py-2 px-4 rounded-full flex h-12 items-center {% if self.style == 'primary' %}flex bg-black text-white pe-3{% elif self.style == 'secondary' %}border-2 border-black bg-white{% endif %}"
             onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emilnielsen/30min'});return false;">
       <div class="grow text-left">{{ self.title }}</div>
       {% if self.style == 'primary' %}
         <span class="bg-white text-black h-8 w-8 rounded-full ms-3 flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg"
                fill="none"
-               viewBox="0 0 24 24"
+               viewBox="0 0 20 24"
                stroke-width="2"
                stroke="currentColor"
                class="w-5 h-5">
