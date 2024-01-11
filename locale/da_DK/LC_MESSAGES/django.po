@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 07:27+0000\n"
-"PO-Revision-Date: 2024-01-11 14:49+0700\n"
+"POT-Creation-Date: 2024-01-11 08:30+0000\n"
+"PO-Revision-Date: 2024-01-11 15:31+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -31,7 +31,7 @@ msgstr "Vælg en overskriftsstørrelse"
 
 #: turbotailer/cms/blocks.py:69
 msgid "e.g. Mary Berry"
-msgstr "F.eks. Mona Lisa"
+msgstr "f.eks. Mona Lisa"
 
 #: turbotailer/cms/blocks.py:77
 msgid "Button display text"
@@ -238,21 +238,27 @@ msgstr "Audit Form"
 msgid "Clear cache"
 msgstr "Ryd cache"
 
-#: turbotailer/core/forms.py:17 turbotailer/core/models.py:8
+#: turbotailer/core/forms.py:17
+#: turbotailer/templates/cookie_consent/_cookie_group.html:40
+#: turbotailer/templates/partials/cookies.html:29
+msgid "Name"
+msgstr "Navn"
+
+#: turbotailer/core/forms.py:21
+msgid "Website"
+msgstr "Hjemmeside"
+
+#: turbotailer/core/forms.py:25 turbotailer/core/models.py:10
+msgid "E-mail"
+msgstr "E-mail"
+
+#: turbotailer/core/models.py:8
 msgid "Navn"
 msgstr "Navn"
 
-#: turbotailer/core/forms.py:21 turbotailer/core/models.py:9
+#: turbotailer/core/models.py:9
 msgid "Hjemmeside"
 msgstr "Hjemmeside"
-
-#: turbotailer/core/forms.py:25
-msgid "Email"
-msgstr "E-mail"
-
-#: turbotailer/core/models.py:10
-msgid "E-mail"
-msgstr "E-mail"
 
 #: turbotailer/core/models.py:14
 msgid "Video link"
@@ -310,8 +316,7 @@ msgstr "Advarsel:"
 #: turbotailer/templates/account/email.html:52
 msgid ""
 "You currently do not have any e-mail address set up. You should really add "
-"an e-mail address so you can receive notifications, reset your password, "
-"etc."
+"an e-mail address so you can receive notifications, reset your password, etc."
 msgstr ""
 "Du har i øjeblikket ikke opsat nogen e-mailadresse. Du bør virkelig tilføje "
 "en e-mailadresse, så du kan modtage meddelelser, nulstille din adgangskode "
@@ -421,8 +426,8 @@ msgstr "Nulstil adgangskode"
 
 #: turbotailer/templates/account/password_reset.html:16
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll send "
-"you an e-mail allowing you to reset it."
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
 msgstr ""
 "Glemt din adgangskode? Indtast din e-mailadresse nedenfor, og vi vil sende "
 "dig en e-mail, der giver dig mulighed for at nulstille den."
@@ -452,8 +457,8 @@ msgstr "Dårligt Token"
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
-"reset</a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
 msgstr ""
 "Adgangskode nulstillingslinket var ugyldigt, muligvis fordi det allerede er "
 "blevet brugt. Venligst anmod om en <a href=\"%(passwd_reset_url)s\">ny "
@@ -522,9 +527,9 @@ msgid ""
 "you are who you claim to be. For this purpose, we require that you\n"
 "verify ownership of your e-mail address. "
 msgstr ""
-"Denne del af siden kræver, at vi verificerer, at du er den person du "
-"udgiver dig for at være. Til dette formål kræver vi, at du verificerer "
-"ejerskabet af din email-adresse. "
+"Denne del af siden kræver, at vi verificerer, at du er den person du udgiver "
+"dig for at være. Til dette formål kræver vi, at du verificerer ejerskabet af "
+"din email-adresse. "
 
 #: turbotailer/templates/account/verified_email_required.html:17
 msgid ""
@@ -539,11 +544,11 @@ msgstr ""
 #: turbotailer/templates/account/verified_email_required.html:22
 #, python-format
 msgid ""
-"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your "
-"e-mail address</a>."
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
 msgstr ""
-"<strong>Bemærk:</strong> du kan stadig <a href=\"%(email_url)s\">ændre din "
-"e-mailadresse</a>."
+"<strong>Bemærk:</strong> du kan stadig <a href=\"%(email_url)s\">ændre din e-"
+"mailadresse</a>."
 
 #: turbotailer/templates/blocks/audit_form.html:9
 msgid "Get a free report"
@@ -589,6 +594,10 @@ msgid ""
 msgstr ""
 "Professionel hjemmeside med unikt design, inklusive 1 månedlig "
 "ændringsanmodning og sikkerhedsopdateringer"
+
+#: turbotailer/templates/blocks/price_table_block.html:42
+msgid "149 $/mo"
+msgstr "999 kr/md"
 
 #: turbotailer/templates/blocks/price_table_block.html:44
 #: turbotailer/templates/blocks/price_table_block.html:87
@@ -676,8 +685,12 @@ msgid ""
 "Everything from starter plus two extra monthly change requests and optional "
 "features such as payments and employee login"
 msgstr ""
-"Alt fra startpakken plus to ekstra månedlige ændringsanmodninger og "
-"valgfrie funktioner som betalinger og medarbejderlogin"
+"Alt fra startpakken plus to ekstra månedlige ændringsanmodninger og valgfrie "
+"funktioner som betalinger og medarbejderlogin"
+
+#: turbotailer/templates/blocks/price_table_block.html:85
+msgid "299 $/mo"
+msgstr "1999 kr/md"
 
 #: turbotailer/templates/blocks/price_table_block.html:93
 #: turbotailer/templates/blocks/price_table_block.html:103
@@ -778,26 +791,21 @@ msgstr "Accepter"
 msgid "Rejected"
 msgstr "Afvist"
 
-#: turbotailer/templates/cookie_consent/_cookie_group.html:28
+#: turbotailer/templates/cookie_consent/_cookie_group.html:30
 msgid "Reject"
 msgstr "Afvis"
 
-#: turbotailer/templates/cookie_consent/_cookie_group.html:38
-#: turbotailer/templates/partials/cookies.html:29
-msgid "Name"
-msgstr "Navn"
-
-#: turbotailer/templates/cookie_consent/_cookie_group.html:39
+#: turbotailer/templates/cookie_consent/_cookie_group.html:41
 #: turbotailer/templates/partials/cookies.html:30
 msgid "Description"
 msgstr "Beskrivelse"
 
-#: turbotailer/templates/cookie_consent/_cookie_group.html:40
+#: turbotailer/templates/cookie_consent/_cookie_group.html:42
 #: turbotailer/templates/partials/cookies.html:31
 msgid "Path"
 msgstr "Sti"
 
-#: turbotailer/templates/cookie_consent/_cookie_group.html:41
+#: turbotailer/templates/cookie_consent/_cookie_group.html:43
 #: turbotailer/templates/partials/cookies.html:32
 msgid "Domain"
 msgstr "Domæne"
@@ -817,7 +825,7 @@ msgstr ""
 msgid "Send"
 msgstr "Send"
 
-#: turbotailer/templates/includes/footer.html:32
+#: turbotailer/templates/includes/footer.html:37
 msgid "Cookieindstillinger"
 msgstr "Cookieindstillinger"
 
@@ -827,8 +835,8 @@ msgstr "Vi bruger cookies"
 
 #: turbotailer/templates/partials/cookies.html:19
 msgid ""
-"This website uses cookies to optimize performance and analyse user "
-"behavior. Please select which cookies you want to accept."
+"This website uses cookies to optimize performance and analyse user behavior. "
+"Please select which cookies you want to accept."
 msgstr ""
 "Dette websted bruger cookies til at optimere ydelsen og analysere "
 "brugeradfærd. Vælg venligst, hvilke cookies du vil acceptere."
@@ -872,3 +880,6 @@ msgstr "e-mail adresse"
 #: turbotailer/users/tests/test_views.py:67 turbotailer/users/views.py:23
 msgid "Information successfully updated"
 msgstr "Informationen blev opdateret succesfuldt"
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
