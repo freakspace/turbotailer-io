@@ -20,7 +20,7 @@ django-allauth = "==0.59.0"
 django-crispy-forms = "==2.1"
 crispy-bootstrap5 = "==2023.10"
 django-redis = "==5.4.0"
-django-webpack-loader = "==2.0.1"
+django-webpack-loader = "==3.0.1"
 werkzeug = {version = "==3.0.1", extras = ["watchdog"]}
 ipdb = "==0.13.13"
 psycopg = {version = "==3.1.15", extras = ["c"]}
