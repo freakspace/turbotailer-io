@@ -1,6 +1,7 @@
 """
 Base settings to build other settings files upon.
 """
+
 from pathlib import Path
 
 import environ
@@ -98,11 +99,13 @@ THIRD_PARTY_APPS = [
     "webpack_loader",
     "cookie_consent",
     "wagtailmenus",
+    "rest_framework",
 ]
 
 LOCAL_APPS = [
     "turbotailer.users",
     "turbotailer.cms",
+    "turbotailer.autoarticles",
     "turbotailer.core",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
