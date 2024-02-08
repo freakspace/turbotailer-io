@@ -3,10 +3,12 @@ from django.utils.translation import gettext as _
 from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
+from wagtail.snippets.models import register_snippet
 
 from turbotailer.cms.blocks import BaseStreamBlock
 
 
+@register_snippet
 class ArticleTopic(models.Model):
     """Topic to generate articles from"""
 

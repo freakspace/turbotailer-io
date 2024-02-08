@@ -1,6 +1,19 @@
 from rest_framework import serializers
 
-from turbotailer.autoarticles.models import ArticleIndexPage, ArticlePage
+from turbotailer.autoarticles.models import ArticleIndexPage, ArticlePage, ArticleTopic
+
+
+class ArticleTopicSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the ArticleTopic model.
+    """
+
+    class Meta:
+        model = ArticleTopic
+        fields = (
+            "link",
+            "prompt",
+        )
 
 
 class ArticleSerializer(serializers.ModelSerializer):
