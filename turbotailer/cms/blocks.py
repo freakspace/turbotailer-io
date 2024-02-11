@@ -398,6 +398,7 @@ class BaseStreamBlock(StreamBlock):
     audit_form = AuditFormBlock(label_format=_("Audit Form"))
     price_table = PriceTableBlock(label_format=_("Price table"))
     text = RichTextBlock(label_format=_("Rich Text"))
+    raw_html = RawHTMLBlock(label_format=_("Raw html"))
 
     class Meta:
         block_counts = {"accordion": {"min_num": 0, "max_num": 1}}

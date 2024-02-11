@@ -25,7 +25,6 @@ class ArticleTopic(models.Model):
 class ArticlePage(Page):
     """A Article Page"""
 
-    introduction = models.TextField(help_text="Text to describe the page", blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -35,12 +34,9 @@ class ArticlePage(Page):
         help_text="Landscape mode only; horizontal width between 1000px and 3000px.",
     )
     body = StreamField(BaseStreamBlock(), verbose_name="Page body", blank=True, use_json_field=True)
-    subtitle = models.CharField(blank=True, max_length=255)
     date_published = models.DateField("Date article published", blank=True, null=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("subtitle"),
-        FieldPanel("introduction"),
         FieldPanel("image"),
         FieldPanel("body"),
         FieldPanel("date_published"),
