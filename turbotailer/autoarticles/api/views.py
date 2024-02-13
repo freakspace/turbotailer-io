@@ -45,7 +45,7 @@ def topic_list_view(request):
 @api_view(["PATCH"])
 def topic_update_view(request, topic_id):
     """
-    List all topics.
+    Update topic
     """
     if request.method == "PATCH":
         # Get the topic instance

@@ -11,5 +11,5 @@ urlpatterns = [
     path("autoarticles/create/article", article_create_view, name="article-create"),
     path("autoarticles/create/topic", topic_create_view, name="topic-create"),
     path("autoarticles/topics", topic_list_view, name="topic-create"),
-    path("autoarticles/topics/<int:topic_id>/", topic_update_view, name="update-topic"),
+    path("autoarticles/topics/<int:topic_id>", topic_update_view, name="update-topic"),
 ]

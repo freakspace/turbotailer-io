@@ -15,7 +15,9 @@ class ArticleTopic(models.Model):
     link = models.CharField(_("Link to related article"), max_length=255, blank=True, null=True)
     prompt = models.TextField(help_text="A prompt to generate the article with", blank=True, null=True)
     is_ready = models.BooleanField(help_text="Determines if a article can be written", default=False)
-    is_parsed = models.BooleanField(help_text="Determines if the link can be scraped and parsed", default=False)
+    is_parsed = models.BooleanField(
+        help_text="Determines if the link can be scraped and parsed", default=False
+    )  # TODO Remove ?
     has_article = models.BooleanField(help_text="Determines if an article has been written", default=False)
 
 

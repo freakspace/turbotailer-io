@@ -22,7 +22,7 @@ class ArticleTopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArticleTopic
         fields = (
-            "link",
+            "id",
             "prompt",
         )
 

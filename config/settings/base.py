@@ -367,3 +367,5 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 LIVE_RELOAD = False
 
 WAGTAILMENUS_MAIN_MENU_ITEMS_RELATED_NAME = "custom_menu_items"
+
+APPEND_SLASH = False
