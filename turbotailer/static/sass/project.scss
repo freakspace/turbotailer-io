@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+    p {
+      @apply mb-16 text-lg lg:text-xl;
+    }
+    h1{
+      @apply text-black text-3xl md:text-6xl font-semibold mb-5 mt-10;
+    }
+    h2{
+      @apply text-4xl font-semibold;
+    }
+  }
+
+
 @import "_fonts.scss";
 
 
@@ -37,7 +51,6 @@ html {
 .custom-rotate-7 {
     rotate: (-15deg);
 }
-
 
 @media (min-width: 1536px) {
     .container {

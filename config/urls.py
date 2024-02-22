@@ -13,6 +13,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path("", include("turbotailer.cms.urls")),
     path("", include("turbotailer.core.urls")),
+    path("", include("turbotailer.autoarticles.urls")),
     path("users/", include("turbotailer.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     path("dashboard/", include(wagtailadmin_urls)),
