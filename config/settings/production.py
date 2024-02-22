@@ -173,3 +173,5 @@ ROBOTS = [
     "User-Agent: *",
     "Allow: /",
 ]
+
+ME_IMAGE_ID = 23

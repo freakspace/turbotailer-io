@@ -2,6 +2,7 @@ import datetime
 
 from django import template
 from django.conf import settings
+from wagtail.images.models import Image
 
 register = template.Library()
 
@@ -27,3 +28,9 @@ def unix_to_datetime(value):
 def live_reload():
     """Check the boolean value of the given setting."""
     return getattr(settings, "LIVE_RELOAD", False)
+
+
+@register.simple_tag
+def get_me_image():
+    id = getattr(settings, "ME_IMAGE_ID")
+    return Image.objects.filter(pk=id).first()
