@@ -8,6 +8,8 @@ from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
+from .sitemaps import sitemap
+
 urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
@@ -22,7 +24,10 @@ urlpatterns = [
     # For anything not caught by a more specific rule above, hand over to
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += i18n_patterns(path("", include(wagtail_urls)), prefix_default_language=False)
+urlpatterns += i18n_patterns(
+    path("sitemap.xml", sitemap), path("", include(wagtail_urls)), prefix_default_language=False
+)
+
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit
     # these url in browser to see how these error pages look like.
