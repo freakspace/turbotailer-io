@@ -6,6 +6,7 @@ from django.urls import include, path
 from django.views import defaults as default_views
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.contrib.sitemaps.views import sitemap
 from wagtail.documents import urls as wagtaildocs_urls
 
 urlpatterns = [
@@ -19,6 +20,7 @@ urlpatterns = [
     path("dashboard/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("cookies/", include("cookie_consent.urls")),
+    path("sitemap.xml", sitemap),
     # For anything not caught by a more specific rule above, hand over to
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
