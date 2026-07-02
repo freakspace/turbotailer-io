@@ -169,9 +169,16 @@ LOGGING = {
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-ROBOTS = [
-    "User-Agent: *",
-    "Allow: /",
-]
+if BLOCK_SEARCH_INDEXING:  # noqa F405
+    ROBOTS = [
+        "User-Agent: *",
+        "Disallow: /",
+    ]
+else:
+    ROBOTS = [
+        "User-Agent: *",
+        "Allow: /",
+        "Sitemap: https://turbotailer.io/sitemap.xml",
+    ]
 
 ME_IMAGE_ID = 24

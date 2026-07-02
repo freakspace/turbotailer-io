@@ -1,0 +1,55 @@
+volumes:
+  production_postgres_data: {}
+  production_postgres_data_backups: {}
+
+networks:
+  dokploy-network:
+    external: true
+
+x-app-base: &app-base
+  build:
+    context: .
+    dockerfile: ./compose/production/django/Dockerfile
+  image: turbotailerio_production_django
+  depends_on:
+    - postgres
+    - redis
+  # Dokploy writes service env vars to a single .env file beside this compose file.
+  env_file:
+    - ./.env
+
+services:
+  django:
+    <<: *app-base
+    expose:
+      - "5000"
+    labels:
+      - traefik.docker.network=dokploy-network
+    networks:
+      - default
+      - dokploy-network
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: turbotailerio_production_postgres
+    volumes:
+      - production_postgres_data:/var/lib/postgresql/data
+      - production_postgres_data_backups:/backups
+    env_file:
+      - ./.env
+
+  redis:
+    image: redis:6
+
+  celeryworker:
+    <<: *app-base
+    image: turbotailerio_production_celeryworker
+    command: /start-celeryworker
+
+  celerybeat:
+    <<: *app-base
+    image: turbotailerio_production_celerybeat
+    command: /start-celerybeat

@@ -17,6 +17,9 @@ if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(BASE_DIR / ".env"))
 
+BLOCK_SEARCH_INDEXING = env.bool("DJANGO_BLOCK_SEARCH_INDEXING", default=False)
+ROBOTS_META_CONTENT = "noindex, nofollow" if BLOCK_SEARCH_INDEXING else "index"
+
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
